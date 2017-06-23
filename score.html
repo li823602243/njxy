@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>成绩单</title>
+		<meta charset="utf-8" />
+		
+	</head>
+	<body>
+		<div class="page" id="page-score">
+			<!-- 标题栏 -->
+			<v-bar title="成绩单" :istab="true" tab1title="所有成绩" tab2title="成绩统计">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+			</v-bar>
+			<div class="content vacation-content">
+				<div class="tabs">
+					<div id="tab1" class="tab active">
+						<!--所有成绩-->
+						<div class="score-list">
+						    <ul class="object-list">
+						    	<li class="item-object" >
+						    		<a  style="border-left: 10px solid #34E2C3;" class="bgicon active">语文</a>
+						    		<ul class="detail-list" >
+						    			<li v-for="item in scoreList | filterBy '1' in 'subject'"  track-by="$index" v-on:click.stop="radarchart(item.rule_TID,item.grade_ID,item.subject)"><a>{{item.test_NAME}}</a> </li>
+						    		
+						    			
+						    		</ul>
+						    	</li>
+						    	<li   class="item-object" >
+						    		<a style="border-left: 10px solid #b175da;" class="bgicon active">数学</a>
+						    		<ul class="detail-list"  >
+						    			<li v-for="item in scoreList | filterBy '2' in 'subject'"  track-by="$index"v-on:click.stop="radarchart(item.rule_TID,item.grade_ID,item.subject)"><a>{{item.test_NAME}}</a> </li>
+						    		
+						    		</ul>
+						    	</li>
+						    	<li   class="item-object" >
+						    		<a style="border-left: 10px solid #ec799a;" class="bgicon active">英语</a>
+						    		<ul class="detail-list" >
+						    			<li v-for="item in scoreList | filterBy '3' in 'subject'"  track-by="$index"v-on:click.stop="radarchart(item.rule_TID,item.grade_ID,item.subject)"><a>{{item.test_NAME}}</a> </li>
+						    			
+						    		</ul>
+						    	</li>
+						    </ul>
+					    </div>
+					  </div>   
+					<div id="tab2" class="tab">
+						<!--折线成绩-->
+                        <div class="score-list">
+						    <ul class="object-list">
+						    	<li class="item-object" >
+						    		<a style="border-left: 10px solid #34E2C3;" class="bgicon active" v-on:click="linechart(1)">语文</a>
+						    		<!--<ul class="detail-list ">
+						    			<li v-for="item in scoreYearList  | filterBy '1' in 'subject'"  track-by="$index" v-on:click="linechart(item.subject,item.year)" ><a>{{item.year}}年度语文测试</a> </li>			
+						    		   
+						    		</ul>-->
+						    	</li>
+						    	<li  class="item-object" >
+						    		<a style="border-left: 10px solid #b175da;"  class="bgicon active"  v-on:click="linechart(2)">数学</a>
+						    		<!--<ul class="detail-list"  >
+						    			<li v-for="item in scoreYearList | filterBy '2' in 'subject'"  track-by="$index"v-on:click="linechart(item.subject,item.year)"><a>{{item.year}}年度数学测试</a> </li>						    		
+						    		      
+						    		</ul>-->
+						    	</li>
+						    	<li   class="item-object" >
+						    		<a style="border-left: 10px solid #ec799a;" class="bgicon active"  v-on:click="linechart(3)">英语</a>
+						    		<!--<ul class="detail-list" >
+						    			<li v-for="item in scoreYearList | filterBy '3' in 'subject'"  track-by="$index"v-on:click="linechart(item.subject,item.year)"><a>{{item.year}}年度英语</a> </li>				   			
+						    		    
+						    		</ul>-->
+						    	</li>
+						    </ul>
+					    </div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+</html>

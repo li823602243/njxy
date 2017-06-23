@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="page" id="class-list">
+        <!-- 标题栏 -->
+	        <v-bar title="班级列表">
+	           <a class="icon icon-left pull-left  no-transition" href="#page-main" slot="left"></a>
+	        </v-bar>
+		    <div class="content">
+		    	<div class="resultsList">
+		    		<div class="resultsList_classes"> 
+		    			<ul>
+		    				<li v-for="item in items" @click="MD5(item.stuList)">
+		    					<span class="className">{{item.classObj.class_NAME}}</span>
+		    				</li>
+		    				
+		    			</ul>
+		    		</div>
+		    	</div>
+		    </div>
+	   </div>
+	</body>
+</html>

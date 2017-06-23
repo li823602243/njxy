@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>请假管理</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+  <div class="page" id="page-vacation-information">
+  <!-- 标题栏 -->
+   <v-bar title="请假申请详情">
+           <a class="icon icon-left pull-left back no-transition" slot="left"></a>
+        </v-bar>
+	    <div class="content" v-cloak>
+				<ul class="vacation-information-list">
+					<li >
+						<label>申&nbsp;请&nbsp;&nbsp;人:</label>
+						 <span>{{vacation.clientVacate.vacate_PERSON_NAME}}</span>
+					</li>
+					
+					<li>
+						<label>请假类型:</label>
+						  <span>{{vacation.clientVacate.item_VALUE}}</span>
+					</li>
+					<li>
+						<label>开始时间:</label>
+						<span>{{vacation.clientVacate.start_TIME}}</span>
+					</li>
+					<li>
+						<label>结束时间:</label>
+						<span>{{vacation.clientVacate.end_TIME}}</span>
+					</li>
+					<li>
+						<label>申请日期:</label>
+						<span>{{new Date(vacation.clientVacate.create_TIME).toLocaleDateString()}}</span>
+					</li>
+					<li>
+						<label>请假原因:</label>
+						  <span>{{vacation.clientVacate.vacate_REASON}}</span>
+					</li>
+				</ul>
+			 <div class="read" v-if="status==0">	
+			     <button id="vacationIsReadBtn" @click="MD5">确认</button> 
+			</div>		    
+	    </div>
+  </div>
+</body>
+</html>
+

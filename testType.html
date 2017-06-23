@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="page" id="test-type">
+        <!-- 标题栏 -->
+	        <v-bar title="考试列表">
+	           <a class="icon icon-left pull-left  no-transition" slot="left" href="#page-main"></a>
+	        </v-bar>
+		    <div class="content">
+		    	<div class="resultsList">
+		    		<div class="resultsList_classes"> 
+		    			<ul>
+		    				<li @click="testListClick(item.ENUM_ID)" v-for="item in items">
+		    					<span class="className">{{item.ITEM_VALUE}}</span>
+		    				</li>
+		    				
+		    			</ul>
+		    		</div>
+		    	</div>
+		    </div>
+	   </div>
+	</body>
+</html>

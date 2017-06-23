@@ -1,0 +1,64 @@
+<!--
+页面：课程表页面
+说明：展示当天的课程安排
+创建/修改：王为娟
+时间：2016/6/13
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="utf-8">
+
+	<head>
+		<title>课程表</title>
+	</head>
+	<body>
+
+		<div class="page" id="page-timetable">
+			<v-bar title="课程表">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+			</v-bar>
+			<div class="content">
+				<!-- 这里是页面内容区 -->
+				<div id="index-calendar">
+				</div>
+				<div id="calen-content">
+					<div class="list-block calen-list-block">
+						
+							<div class="item-content">
+								<div class="item-media"><i class="icon icon-f7"><img src="assets/img/titmetable/weather.png" class="calen-icon-style"/></i></div>
+								<div class="item-inner" >
+									
+									<!--<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=1" width="330" height="35" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>-->
+								<div style="width: 100%;height: 2rem;background-color: transparent;position: absolute;z-index: 100;"></div>
+								<!--<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=52&icon=1&num=3" width="280" height="25" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>-->
+								<!--<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=99" width="160" height="36" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>-->
+								<!--<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=48" width="440" height="45" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>-->
+								<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=11" width="500" height="15" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" ></iframe>
+								</div>
+							</div>
+							
+						
+						
+						<ul>
+							<li class="calen-info" v-for="item in schoolTimeable">
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-input">
+											<div class="row">
+											<div class="schoolTimetable-beginTime col-20">{{item.BEGIN_TIME}}</div>
+											<div style="float: left;">——</div>
+											<div class="schoolTimetable-endTime col-20">{{item.END_TIME}}</div>
+											<div class="schoolTimetable-courseName col-40">{{item.COURSE_NAME}}</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

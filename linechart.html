@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="page" id="page-linechart">
+  <!-- 标题栏 -->
+      <v-bar title="趋势详情">
+           <a class="icon icon-left pull-left back no-transition" slot="left"></a>
+        </v-bar>
+	    <div class="content" >
+	    	<div class="line-content" style="margin-top: 20px;">
+						<div id="mainw" ></div>
+            </div>
+             <ul class="scorelist">
+             	<li class="row firstscore">
+             		<a class="col-50">名称</a>
+             		<a class="col-25">得分</a>
+             		<a class="col-25">班级平均</a>
+             	</li>
+            	<li class="row" v-for="item in allsocre">
+             		<a class="col-50">{{item.TEST_NAME}}</a>
+             		<a class="col-25">{{item.COUNT_MARK.toFixed(2)}}</a>
+             		<a class="col-25">{{item.TOTALCOUNT.toFixed(2)}}</a>
+             	</li>
+             
+             </ul>	    	
+	    </div>
+	   </div> 
+	</body>
+</html>

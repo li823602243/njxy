@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>教师查看学生请假列表</title>
+	</head>
+	<body> 
+		<div class="page" id="page-vacationlist">
+			<v-bar title="请假" :istab="true" tab1title="我的待办" tab2title="请假完成">
+				<a class="icon icon-left pull-left no-transition" href="#page-main" slot="left"></a>
+				<a class="icon pull-right no-transition"  slot="right" id="pubCircleBtn">
+				</a>
+			</v-bar>
+
+        	<div class="tabs"  id="icain-refresh">
+		        	<div id="tab1"  class="tab content active pull-to-refresh-content infinite-scroll" data-distance="100">
+		        		  	<!--下拉刷新-->
+		        		<div class="refresh-wrapper">
+							<div class="pull-to-refresh-layer">
+							    <div class="preloader"></div>
+							    <div class="pull-to-refresh-arrow"></div>
+							</div>
+			        	<ul class="list-vacate" >
+			        		<li class="cc{{$index%5}}" v-on:click="waitMd5(item.MD5CODE)" v-for="item in waitList"  track-by="$index">
+			        		    <h3 >
+			        		    	<i style="color: #000000;" class="icon icon-message" ></i> {{item.ITEM_VALUE}}
+			        		    </h3>
+		        		        <div class="row vacate-date" style="margin-left: 0;">
+							      <div class="col-25 vacate-text">天&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数:</div>
+							      <div class="col-25 vacate-text">{{item.VACATE_DAYS}} 天</div>
+							      <div class="col-25 vacate-text">请假人:</div>
+							      <div class="col-25 vacate-text">{{item.VACATE_PERSON_NAME}}</div>
+							    </div>
+							 <div class="vacate-date">
+			        		    <label>休假日期:</label>
+			        		    <span>{{item.START_TIME.substr(0,10)}}</span>
+			        		    <span>——</span>
+			        		    <span>{{item.END_TIME.substr(0,10)}}</span>
+			        	      </div>
+			        	      <div class="va-time" >{{getTimeTip(item.CREATE_TIME)}}</div>
+			        		</li>
+			        	 </ul>
+			        	  </div>
+			        	 <!--preloader-->
+			        	 <div class="infinite-scroll-preloader" style="margin-bottom: 70px; text-align: center;"></div>
+			        </div>
+		        	<div id="tab2"  class="tab content pull-to-refresh-content infinite-scroll" data-distance="100">
+		        		<!--下拉刷新-->
+						<div class="pull-to-refresh-layer">
+						    <div class="preloader"></div>
+						    <div class="pull-to-refresh-arrow"></div>
+						</div>
+		        		<ul class="list-vacate" >
+			        		<li class="cc{{$index%5}}" v-on:click="vacateMd5(item.MD5CODE)" v-for="item in vacationList"  track-by="$index">
+			        		    <h3 >
+			        		    	<i style="color: #000000;" class="icon icon-message" ></i> {{item.ITEM_VALUE}}
+			        		    </h3>
+			        		   <div class="row vacate-date" style="margin-left: 0;">
+							      <div class="col-25 vacate-text">天&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数:</div>
+							      <div class="col-25 vacate-text">{{item.VACATE_DAYS}} 天</div>
+							      <div class="col-25 vacate-text">请假人:</div>
+							      <div class="col-25 vacate-text">{{item.VACATE_PERSON_NAME}}</div>
+							    </div>
+			        		    <div class="vacate-date">
+			        		    <label>休假日期:</label>
+			        		    <span>{{item.START_TIME.substr(0,10)}}</span>
+			        		    <span>——</span>
+			        		    <span>{{item.END_TIME.substr(0,10)}}</span>
+			        	      </div>
+			        	      <div class="va-time" >{{getTimeTip(item.CREATE_TIME)}}</div>
+			        		</li>
+			        	 </ul>
+		        		<!--preloader-->
+		        	    <div class="infinite-scroll-preloader" style="margin-bottom: 70px; text-align: center;"></div>
+		        	</div>
+	       		</div>
+
+			</div>	
+
+		
+	</body>
+</html>

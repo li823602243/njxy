@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>一幼圈</title>
+	</head>
+
+	<body>
+		<div class="page" id="notice-detail">
+			<v-bar title="公告详情">			
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+	        </v-bar>
+			<div class="content">
+             <div class="content-title"><span>{{pp.TITLE}}</span></div>
+             <div class="content-time"><span>{{pp.PUBLISH_TIME}}</span></div>
+             <div class="content-page">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{{pp.BODY}}}</div>
+		    </div>
+		</div>
+	</body>
+</html>

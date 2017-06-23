@@ -1,0 +1,83 @@
+<!--
+页面：新增个人日历页面
+说明：新增
+创建/修改：王为娟
+时间：2016/6/6
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>新增个人日历</title>
+	</head>
+
+	<body>
+		<div class="page" id="add-schedule">
+			<v-bar title="新增个人日历">
+				<a class="icon  pull-left back no-transition" slot="left"><span style="font-size: .7rem;">取消</span></a>
+				<a class="icon pull-right " slot="right"><span id="sched-add-complete" style="font-size: .7rem;">完成</span></a>
+			</v-bar>
+
+			<div class="content">
+				<div class="card" style="border-radius:10px;">
+				<!--<form id="sched-add-from">-->
+				<input type="hidden" name="USER_ID" id="USER_ID" />
+				<div class="list-block">
+					<ul>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">标&nbsp;&nbsp;&nbsp;&nbsp;题：</div>
+									<div class="item-input">
+										<input type="text" placeholder="如：参加周例会" name="TITLE" id="TITLE" />
+									</div>
+								</div>
+							</div>
+						</li>
+					<!--	<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">日历类型：</div>
+									<div class="item-input">
+										<select id="CALENDAR_TYPE"  name="CALENDAR_TYPE">
+											 <option value ="1">行政</option>
+										     <option value ="2">教学</option>
+										     <option value="3">后勤</option>
+										     <option value="4">接待</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</li>-->
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">时间：</div>
+									<div class="item-input">
+										<input type="time" name="MEN_TIME" id="MEN_TIME" style="display: flex;"/>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">备&nbsp;&nbsp;&nbsp;&nbsp;注：</div>
+									<div class="item-input">
+										<textarea id="contentmeno" placeholder="请填写备注" name="CONTENT"></textarea>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--
+				</form>-->
+			</div>
+         </div>
+		</div>
+
+	</body>
+
+</html>

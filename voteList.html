@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	作者：左武洲
+        	时间：2016-06-27
+        	描述：投票列表页面
+        -->
+		<div class="page" id="page-voteList">
+			<v-bar title="投票">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+				<!--<a v-if="roleId==1" class="icon pull-right no-transition" slot="right" href="addVote.html" id="pubCircleBtn"><img src="assets/img/yy-circleAdd.png"  style="width: 1rem; height: 1rem;" /></a>
+			    <a v-if="roleId==2" class="icon pull-right no-transition" slot="right" href="#" id="pubCircleBtn"></a>-->
+			</v-bar>
+			<div>
+				<div class="tabs vote-list-container">
+					<div class="tab active pull-to-refresh-content infinite-scroll content" id="tab1" data-ptr-distance="50" style="top: 0 !important;" >
+						 <div class="pull-to-refresh-layer">
+						    <div class="preloader"></div>
+						    <div class="pull-to-refresh-arrow"></div>
+						  </div>
+				         <ul class="vote-list">
+					       <li v-for="item in voteList" class="vote-item"  v-on:click="hrefSchool(item)" v-cloak>
+					      	<div class="item-left">
+					      		<h5 class="item-title">{{item.VOTE_TITLE}}</h5>
+					      		<p class="item-content">{{item.VOTE_DESC}}</p>
+					      	</div>
+					      	<div class="item-right">
+					      		<span class="icon icon-right"></span>
+					      	</div>
+					      	<span class="item-time">{{getTimeTip(item.CREAT_DATE)}}</span>
+					      </li>
+					    </ul>
+					     <!--preloader-->
+			        	  <div class="infinite-scroll-preloader">
+						        
+						    </div>
+			         </div>
+						    <!-- preloader -->
+						    <!--<div class="infinite-scroll-preloader">
+						        <div class="preloader"></div>
+						    </div>-->
+					<div class="tab pull-to-refresh-content infinite-scroll content" id="tab2" data-ptr-distance="55" >
+							 <div class="pull-to-refresh-layer">
+							    <div class="preloader"></div>
+							    <div class="pull-to-refresh-arrow"></div>
+							  </div>
+						     <ul class="vote-list">
+					       <li v-for="item in voteClassList" class="vote-item"  v-on:click="hrefClass(item)" v-cloak>
+					      	<div class="item-left">
+					      		<h5 class="item-title">{{item.VOTE_TITLE}}</h5>
+					      		<p class="item-content">{{item.VOTE_DESC}}</p>
+					      	</div>
+					      	<div class="item-right">
+					      		<span class="icon icon-right"></span>
+					      	</div>
+					      	<span class="item-time">{{getTimeTip(item.CREAT_DATE)}}</span>
+					      </li>
+					    </ul>
+					     <!--preloader-->
+			        	  <div class="infinite-scroll-preloader">
+						       
+						    </div>
+			        	</div>
+						    <!-- preloader -->
+						    <!--<div class="infinite-scroll-preloader">
+						        <div class="preloader"></div>
+						    </div>-->
+					</div>
+			</div>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>首页</title>
+		<!--框架样式-->
+		<link rel="stylesheet" type="text/css" href="./assets/css/light7.min.css">
+		<!--轮播组件样式-->
+		<link rel="stylesheet" type="text/css" href="./libs/swiper/light7-swiper.min.css" />
+		<!--自定义样式-->
+		<link rel="stylesheet" type="text/css" href="assets/css/zCalendar.css" />
+		<link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+		<link rel="stylesheet" type="text/css" href="libs/lightbox/lightbox.min.css" />
+	</head>
+
+	<body>
+		<!--登录首页-->
+		<div class="page page-current" style="top:0;" id="login-index">
+			<div class="content login-index-background">
+				<img class="login-login-logo" src="assets/img/login/logo.png"/>
+				<div class="login-index-buttons">
+					<div class="btn-login">
+						<a id="loginIndexBtn" class="button button-round">登录</a>
+					</div>
+			</div>
+		</div>
+		<!--我的应用-->
+		<div class="page" id="page-main" >
+			<v-bar title="我的应用">
+				<a v-if="greeting" href="barcode_scan.html" class="icon pull-right no-transition" id="barcodeBtn" slot="right" >
+					<img src="assets/img/mainimg/barcode.png" style="width: 1rem; height: 1rem;" />
+				</a>
+			</v-bar>
+			<v-nav></v-nav>
+			<div class="content">
+				<div class="swiper-container swiper-container-device-main" data-loop="true" data-pagination='.swiper-pagination' data-autoplay="1000">
+				        <div class="swiper-wrapper ">
+				        	<div class="swiper-slide"><img style="height: 140px;" src="assets/img/banner/xiaoyin_banner.png" /></div>
+				        	<div class="swiper-slide"><img style="height: 140px;" src="assets/img/banner/aa1.jpg"/></div>
+				            <div class="swiper-slide"><img style="height: 140px;" src="assets/img/banner/aa2.jpg"/></div>
+				        </div>
+				        <div class="swiper-pagination"></div>
+	 	       </div>
+	         <div class="row  no-gutter main-row">
+	          <div class="col-33"><a href="notice.html" class="no-transition"><img src="assets/img/mainimg/notice.png"/></a></div>
+		      <div class="col-33">
+		      	<a href="menology.html" v-if="greeting" class="no-transition"><img src="assets/img/mainimg/menology.png"/></a>
+		      	<a href="classtable.html" v-else class="no-transition"><img src="assets/img/mainimg/classtable.png"/></a>  
+		      </div> 
+		      <div class="col-33"> 
+		   <!-- <a href="call.html" v-if="greeting" class="no-transition"><img src="assets/img/mainimg/call.png"/></a>    教师版点名 	-->
+		      	<a href="testType.html" v-if="greeting" class="no-transition"><img src="assets/img/mainimg/results_list.png"/></a>     	<!--教师版成绩表-->
+		        <a href="score.html" v-else class="no-transition"><img src="assets/img/mainimg/score.png"/></a>
+		       </div>
+	         </div>
+		    <div class="row  no-gutter main-row">
+		      <div class="col-33">
+		      	<a href="teachertable.html" v-if="greeting" class="no-transition"><img src="assets/img/mainimg/course_table.png"/></a>      			      	
+		      	<a href="page-vacation.html" v-else class="no-transition"><img src="assets/img/mainimg/vac.png"></a>
+		      	<!--<a href="canteen.html" v-else class="no-transition"><img src="assets/img/main/dining.png"/></a>-->
+		      </div>
+		      <div class="col-66" id="helloMain"><img src="assets/img/mainimg/bgwhite.png"/>
+		      <div  id="secondMain">
+		      	<div style="width: 100%;height: 100%;background-color: transparent;position: absolute;z-index: 100;"></div>
+		      	<span>hello!{{loginName}} <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=11" width="650" height="15" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" ></iframe></span>
+              </div>
+		      </div>
+		    </div>
+		    <div class="row  no-gutter main-row">
+		      <div class="col-33">
+		      	<a href="news.html" class="no-transition"><img src="assets/img/mainimg/news.png"/></a>
+		      </div>
+		      <div class="col-33"> 
+		      	<a href="page-vacationlist.html" v-if="greeting" class="no-transition"><img src="assets/img/mainimg/holiday.png"/></a>
+		      	<a href="voteList.html" v-else class="no-transition"><img src="assets/img/mainimg/vote.png"/></a>
+		      </div>
+		      <div class="col-33">
+		      	<a href="classList.html" v-if="greeting" class="no-transition"><img src="assets/img/mainimg/more.png"/></a>
+		      	<a href="#" v-else class="no-transition"><img src="assets/img/mainimg/wa.png"/></a>
+		      	
+		      </div>
+		    </div>
+		     <div class="oval-pop"></div>
+		</div>
+		
+	</div>
+		<!--我的主页面-->
+		<div class="page" id="mine-index">
+			<v-bar title="我的">
+				<a class="icon pull-left back" slot="left" style="margin-top: .8rem;"></a>
+			</v-bar>
+			<v-nav v-if="role == 1 || role == 2"></v-nav>
+			<v-public v-else></v-public>
+			<div class="content activity-detail-content">
+				<img v-if='headimg==undefined||headimg=="null"' id="mineIndexBg" class="mine-index-header-bg blur" src="assets/img/systemheader.png"/>
+				<img v-else :src="nginx+headimg"  id="mineIndexBg" class="mine-index-header-bg blur"/>
+				<div class="mine-index-header-box">
+					<div class="mine-main-info">
+						<img v-if='headimg==undefined||headimg=="null"' @click="noChoose" id="mineUserImg" class="mine-favicon" src="assets/img/systemheader.png"/>
+						<img v-else @click="hasChoose" id="mineUserImg" class="mine-favicon" :src="nginx+headimg" />
+						<div id="userNameDiv">{{name}}</div>
+						<div class="mine-name-input">
+						</div>
+					</div>
+				</div>
+					<ul id="mineMenuList" class=" mine-index-menu-list">
+						<li data-href="#mine-my-children" v-show="role == 2" class="mine-index-menu-item mine-index-menu-style3">
+							<div class="mine-index-icon icon-mine-children"></div>
+							<div class="mine-index-body">我的孩子</div>
+						</li>
+						<li data-href="mine-setting.html" v-if="role == 1 || role == 2" class="mine-index-menu-item mine-index-menu-style5">
+							<div class="mine-index-icon icon-mine-setting"></div>
+							<div class="mine-index-body">我的设置</div>
+						</li>
+					</ul>
+			</div>
+
+		</div>
+		<!--校园风光-->
+		<div class="page" id="yy-surroundings">
+			<v-bar title="校园风光">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+			</v-bar>
+			<div class="content">
+				<div class="surroundings-image-container">
+					<img src="assets/img/school/school1.jpg" class="surroundings-image"/>
+					<div class="surroundings-content-container surroundings-content-right">
+						<h4 class="surroundings-content-title">小营小学操场</h4>
+						<p class="surroundings-content-p">操场占地面积约500平米，广场四周绿化，孩子更广阔的活动空间。</p>
+					</div>
+				</div>
+				<div class="surroundings-image-container">
+					<img src="assets/img/school/school2.jpg" class="surroundings-image"/>
+					<div class="surroundings-content-container surroundings-content-left" style="border-color:#71b7ff;">
+					<h4 class="surroundings-content-title">绿化</h4>
+						<p class="surroundings-content-p">市优秀绿化景观学校</p>
+					</div>
+				</div>
+				<div class="surroundings-image-container">
+					<img src="assets/img/school/school3.jpg" class="surroundings-image"/>
+					<div class="surroundings-content-container surroundings-content-right" style="border-color:#b797ff;">
+						<h4 class="surroundings-content-title">人文</h4>
+						<p class="surroundings-content-p">呵护童真，激活童趣，滋养童心，用智慧启迪儿童，用爱心成就儿童</p>
+					</div>
+				</div>
+				<div class="surroundings-image-container">
+					<img src="assets/img/school/school4.jpg" class="surroundings-image"/>
+					<div class="surroundings-content-container surroundings-content-left" style="border-color:#fb95f3;">
+						<h4 class="surroundings-content-title">园林</h4>
+						<p class="surroundings-content-p">环境优美，宽广宁静，占地面积15200平方米，建筑面积 5820平方米。</p>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		<!--集团介绍-->
+		<div class="page" id="circles-introduction">
+			<v-bar title="校园介绍">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+			</v-bar>
+			<div class="content">
+				<div class="introduction-header-container">
+					<div class="introduction-header">
+						<h4 class="introduction-header-title ">南京市小营小学</h4>
+						<p class="introduction-header-content">南京市小营小学建校于1952年，始称华东军区空军干部子弟小学，1964年交付地方政府教育部门，正式更名为华东南京市小营小学。</p>
+					</div>
+				</div>
+				<div class="introduction-item-container">
+					<h4 class="introduction-item-title icon-introduction-text">学校概况</h4>
+					<p class="introduction-item-content">
+						 学校占地面积15200平方米，建筑面积5820平方米。32个教学班，均为小班化教学，有1040余名学生，69多名教职工。在“呵护童真，激活童趣，滋养童心，用智慧启迪儿童，用爱心成就儿童”的核心价值观指导下，围绕“在童心文化建设中，创办全国小班化示范名校”的发展愿景,以“有了爱，就有了一切”为校训，努力建设童心文化，推进精致化小班管理。
+					</p>
+				</div>
+				<div class="introduction-item-container" style="margin-bottom: 1.5rem;">
+					<h4 class="introduction-item-title icon-introduction-cup">优秀奖项</h4>
+					<ul class="introduction-honor-list">
+						<li class="introduction-honor-item">国际启发潜能实验大奖</li>
+						<li class="introduction-honor-item">全国首批足球特色学校</li>
+						<li class="introduction-honor-item">省“群众满意服务窗口示范单位”</li>
+						<li class="introduction-honor-item">省“优秀少先队集体”</li>
+						<li class="introduction-honor-item">省“健康促进学校金奖”</li>
+						<li class="introduction-honor-item">省“文明校园”</li>
+						<li class="introduction-honor-item">市“文明单位”</li>
+						<li class="introduction-honor-item">市“师德先进群体”</li>
+						<li class="introduction-honor-item">市“优秀基层服务窗口”</li>
+						<li class="introduction-honor-item">市“青奥示范校”</li>
+						<li class="introduction-honor-item">市“教育系统双拥先进集体”</li>
+						<li class="introduction-honor-item">市“教育系统基层服务型党组织示范点”</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--我的孩子-->
+		<div class="page" id="mine-my-children">
+			<v-bar title="我的孩子">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+			</v-bar>
+			<div class="content">
+				<div class="list-block" style="margin-top: 3px;">
+				<div class="row no-gutter" style="text-align: center;margin-top: 10px;background-color: #ffffff;height: 40px;line-height: 40px;">
+				    <div class="col-33">孩子</div>
+				    <div class="col-33"> {{childrenList.STUDENT_NAME}} </div>
+				    <div class="col-33">{{childrenList.CLASS_NAME}} </div>
+				</div>  
+				</div>
+			</div>
+		</div>
+		<!--通讯录-->
+		<div class="page" id="page-roster">
+			<v-bar title="通讯界面">
+			</v-bar>
+			<v-nav></v-nav>
+			<div class="content">
+				<div class="list-block roster-container">
+					功能正在开发中敬请期待。。。。。。
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+	<!--框架js-->
+	<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./assets/js/light7.min.js"></script>
+	<script type="text/javascript" src="./assets/js/vue.min.js"></script>
+	<script type="text/javascript" src="assets/js/cn.min.js"></script>
+	<script type="text/javascript" src="libs/md5/md5-min.js"></script>
+	<!-- 手势密码 -->
+	<script type="text/javascript" src="assets/js/H5lock.publish.js"></script>
+	<!--轮播组件-->
+	<script type="text/javascript" src="./libs/swiper/light7-swiper.min.js"></script>
+	<script type="text/javascript" src="libs/lightbox/lightbox.min.js"></script>
+	<!--自定义组件-->
+	<script type="text/javascript" src="./components/bar.js"></script>
+	<script type="text/javascript" src="./components/nav.js"></script>
+	<script type="text/javascript" src="components/messageItem.js"></script>
+	<!--图表-->
+	<script type="text/javascript"src="assets/js/echarts.min.js"></script>
+	<!--公共方法-->
+	<script type="text/javascript" src="assets/js/njyy-api.js"></script>
+	<script src="assets/js/utils.js"></script>
+	<script type="text/javascript" src="libs/hammer.min.js" ></script>
+	<script src="assets/js/zCalendar.js"></script>
+	<!--app数据接口-->
+	<script type="text/javascript" src="./data.js"></script>
+	<!--app页面逻辑-->
+	<script type="text/javascript" src="./app.js"></script>
+</html>

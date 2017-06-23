@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	作者：左武洲
+        	时间：2016-06-28
+        	描述：投票详情页面
+        -->
+        <div class="page" id="page-voteDetail">
+        	<v-bar title="内容详情">
+        		<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+        	</v-bar>
+        	<div class="content vote-detail-container">
+        		<div class="content-wrapper" style="min-height: 100%; padding-bottom: 50px; padding-top: 10px;">
+	        		<div class="votedetail-t clearfix" style="background: #fff;padding: 15px;margin: 10px;border-radius: 5px;">
+		        		<h5 class="vote-detail-title">{{item.vote_TITLE}}</h5>
+		        		<p class="vote-detail-content">
+		        			{{item.vote_DESC}}
+		        			<span class="vote-detail-time">投票有效期:{{item.vote_STAR}} 至 {{item.vote_END}}</span>
+		        		</p>
+	        		</div>
+	        		<div class="vote-detail-tip">请选择您的投票对象</div>
+		        	 <form id="expert-vote-qustion">
+			        	  <ul>
+			        	  	 <input type="hidden" id="RECORED_PEOPLE_ID"  name="RECORED_PEOPLE_ID" value="">
+						 	 <input type="hidden" id="VOTE_ID"  name="VOTE_ID" value="">
+							  <li v-for="yy in items" class="voteDetail_list">
+							    <label class="label-checkbox item-content row no-gutter">
+							      <input type="checkbox" v-if="item.is_CHOICE==2" name="DETAIL_ID" value="{{yy.detail_ID}}" class="check-box-type" >
+							      <input type="radio" v-else  name="DETAIL_ID" value="{{yy.detail_ID}}" class="check-box-type" >
+							      <div class="item-media" ><i class="icon icon-form-checkbox" v-if="greeting==0"></i></div>
+							      <div class="content-warp" style="width: 70%; font-size: 14px;" >{{yy.vote_CONTENT}}</div>
+							      <div class="content-bottom"><span class="vote-num">{{yy.vote_NUM}}</span><span class="vote-num-title">票</span></div>
+							    </label>
+							    <div class="probar color{{$index%5}}":style="{width:yy.voting+'%'}" > </div>
+							  </li>
+							 
+						</ul>
+					</form>
+        		</div>
+				 <div class="expert-button" v-if="greeting==0" style="margin-top: -50px; padding: 0; line-height: 50px;">
+					  	<a href="#"  id="expert-answer-button" style="display: inline-block;width: 100%;">提交投票</a>
+				  </div>
+        	</div>
+        </div>
+	</body>
+</html>

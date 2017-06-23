@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>请假申请</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+  <div class="page" id="page-vacation-student">
+  <!-- 标题栏 -->
+   	 <v-bar title="请假">
+		<a class="icon icon-left pull-left  back no-transition" slot="left"></a>
+	 </v-bar>
+	    <div class="content" >
+		<div id="form-vacation" >
+				<ul class="vacation-list"  style="margin-top:0px;">
+					<li>
+						<label>申&nbsp;请&nbsp;&nbsp;人:</label>
+						<input id="vacatename" type="text" value=""  placeholder="" readonly="readonly"/>
+					</li>
+					<li id="vacation-type">
+									<label>请假类别:</label>
+									<input id="vacat-t" type="text" data-type="" placeholder="请填写请假类别" readonly="readonly" />
+									<div id="vacation-cho">
+										<ul class="vacation-type">
+											<li v-for="item in vacatetype">
+												<a data-type="{{item.enum_ID}}">{{item.item_VALUE}}</a>
+											</li>
+										</ul>
+									</div>
+					</li>
+					<li>
+						<label>开始时间:</label>
+						<input  type="text" id="startime"  />
+					</li>
+					<li>
+						<label>结束时间:</label>
+						<input type="text"id="endtime"  />
+					</li>
+					<li>
+						<label>请假原因:</label>
+						<textarea  id="reason" value="" style="resize:none; width: 60%; height:3rem;"></textarea>
+					</li>
+				</ul>
+		    </div>	   
+					      	
+					         <button class="sub confirm-ok" >提交申请</button>
+		 </div>
+  </div>
+</body>
+</html>
+

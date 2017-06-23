@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>一幼圈</title>
+	</head>
+
+	<body>
+		<!--一幼圈首页-->
+		<div class="page bg_white" id="yy-circle">
+			<v-bar title="我的校园" :istab="true" tab1title="校园" tab2title="班级" v-if="IS_CHARGE==1">
+				<a class="icon pull-left" slot="left" style="margin-top: 1rem;" href="#"></a>
+				<a class="icon pull-right no-transition" id="pubCircleBtn" style="display: none;" slot="right" href="yy-publishCircle.html">
+					<img src="assets/img/yy-circleAdd.png" style="width: 1rem; height: 1rem;" />
+				</a>
+			</v-bar>
+			 <v-bar title="我的校园" v-else>
+   	       </v-bar>
+			<v-nav></v-nav>
+			<div class="tabs">
+				<!--校园圈-->
+				<div id="tab1" style="margin-bottom: 30px;" class="tab active content infinite-scroll pull-to-refresh-content" :class="{'active-circle':IS_CHARGE===0,'noActive':ROLE==2}" data-distance="100" data-ptr-distance="100">
+					<!--下拉提示-->
+					<div class="pull-to-refresh-layer">
+						<div class="preloader"></div>
+						<div class="pull-to-refresh-arrow"></div>
+					</div>
+					<!--轮播图-->
+					<div class="swiper-container" data-space-between='0' data-autoplay="10000" style="height: 8rem;">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="assets/img/banner/xiaoyin_banner.png" alt="" style="height: 8rem;"></div>
+						</div>
+					</div>
+					<!--校园风光、集团介绍-->
+					<div class="row no-gutter">
+						<div class="col-50">
+							<a href="#circles-introduction" class="button bt1 no-transition"><img src="assets/img/banner/in1.png" width="25" height="25" /> <span>校园介绍</span></a>
+						</div>
+						<div class="col-50">
+							<a href="#yy-surroundings" class="button bt2 no-transition"><img src="assets/img/banner/st2.png" width="25" height="25" /> <span>校园风光</span></a>
+						</div>
+					</div>
+					<ul>
+						<li v-for="item in schoolCircleList" track-by="$index">
+							<div class="card class-card-style">
+								<div class="card-header no-border">
+									<!--头像-->
+									<div class="class-card-hearder">
+										<img src="assets/img/circles/T.png" width="37" height="37" />
+									</div>
+									<div class="class-card-hearder social-school-card-title">
+										<div class="class-name-style">{{item.ANN_TITLE}}</div>
+										<div style="font-size: 14px;">{{item.ANN_DATE}}</div>
+									</div>
+								</div>
+								<div class="card-content">
+									<div class="card-content-inner class-card-content  school-circle-content circle-comtent" :class="{'circle-comtent-none':activeName===item.ANN_ID}" @click="chooseMe(item)">{{item.ANN_CONTENT}}</div>
+									<div class="yy-circle-item-image-content clearfix">
+										<div v-for="path in getImagePath(item.PATH)">
+											<a href="{{nginx+path}}" data-lightbox="{{item.ANN_ID}}" rel="lightbox">
+												<img class="yy-circle-item-image" src="{{nginx+path}}" data-src="{{path}}" />
+												<!--<img v-on:click="showBigPic(item.PATH)" class="yy-circle-item-image" src="" data-src="{{path}}" />-->
+												<!--<div v-show="bigPic" v-on:click="hiddenBigPic()" class="icain-mark-layer" transition="mark"></div>
+												<div class="icain-main-mark-layer" style="position: fixed; left: 0; right: 0; top: 0; bottom: 0;"></div>
+					  							<img v-show="bigPic" class="icain-bigPic-layer" transition="bigPic" :src="showPicSrc" alt="大图" />-->
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!--上拉加载提示-->
+					<div class="infinite-scroll-preloader" style="margin-top: -70px; padding-bottom: 150px;">
+					</div>
+				</div>
+				<!--班级圈-->
+				<div id="tab2" class="tab content infinite-scroll pull-to-refresh-content" :class="{'active-circle': ROLE==2,'active':ROLE==2}" data-distance="100" data-ptr-distance="100" style="padding-bottom: 50px !important;">
+					<!--下拉提示-->
+					<div class="pull-to-refresh-layer">
+						<div class="preloader"></div>
+						<div class="pull-to-refresh-arrow"></div>
+					</div>
+					<div v-if="ROLE==2">
+						<!--轮播图-->
+						<div class="swiper-container" data-space-between='0' data-autoplay="10000" style="height: 8rem;">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img src="assets/img/banner/xiaoyin_banner.png" alt="" style="height: 8rem;"></div>
+							</div>
+						</div>
+						<!--校园风光、集团介绍-->
+						<div class="row no-gutter">
+							<div class="col-50">
+								<a href="#circles-introduction" class="button bt1 no-transition"><img src="assets/img/banner/in1.png" width="25" height="25" /> <span>校园介绍</span></a>
+							</div>
+							<div class="col-50">
+								<a href="#yy-surroundings" class="button bt2 no-transition"><img src="assets/img/banner/st2.png" width="25" height="25" /> <span>校园风光</span></a>
+							</div>
+						</div>
+					</div>
+					<!--班级圈-->
+					<ul>
+						<li v-for="item in classCircleList" track-by="$index" id="{{item.CLA_ID}}">
+							<div class="card class-card-style">
+								<div class="card-header no-border list-card-header-style">
+									<div class="class-user-img-container">
+										<img class="class-user-img" v-if="item.HEAD_PORTRAIT==undefind" src='assets/img/systemheader.png' style="width: 45px;height:45px;" />
+										<img v-else class="class-user-img" src="{{nginx+item.HEAD_PORTRAIT}}" style="width: 45px;height:45px;" />
+									</div>
+									<div class="class-card-title-time">
+										<div class="class-name-style">{{item.NAME}}</div>
+										<div class="class-time-style">{{item.CLA_DATE}} &nbsp;<span v-show="item.NAME==userName" style="color: #1a1aa6;" @click="deleteClassCircle(item)">删除</span> </div>
+									</div>
+									<div class="class-action-container">
+										<img class="icon-comment" @click="contact($index)" src="assets/img/circles/btn_comment.png" />
+										<img id="like{{item.ROW_ID}}" v-if="item.ISPOSITIVE==1" @click="pushCircle(item.CLA_ID,item.ROW_ID)" class="icon-like" src="./assets/img/circles/btn_heart_pressed.png" />
+										<img v-else id="like{{item.ROW_ID}}" class="icon-like" @click="pushCircle(item.CLA_ID,item.ROW_ID)" src="assets/img/circles/btn_heart_normal.png" />
+										<!--<span class="icon icon-star" @click="collect(item.CLA_ID,item.CLA_CONTENT)"></span>
+												{{isSelf(item.NAME_ID)}}-->
+										<!--<span class="icon icon-remove" :style="isSelf(item.NAME_ID)" @click="deleteClassCircle(item)"></span>-->
+									</div>
+								</div>
+								<div class="card-content">
+									<div class="card-content-inner  school-circle-content circle-comtent" :class="{'circle-comtent-none':activeNameClass===item.CLA_ID}" @click="chooseClass(item)">{{item.CLA_CONTENT}}</div>
+									<div class="yy-circle-item-image-content clearfix">
+										<div v-for="path in getImagePath(item.PATH)">
+											<a href="{{nginx+path}}" data-lightbox="{{item.CLA_ID}}" rel="lightbox">
+												<img class="yy-circle-item-image" src="{{nginx+path}}" data-src="{{path}}" />
+												<!--<img v-on:click="showBigPic(item.PATH)" class="yy-circle-item-image" src="" data-src="{{path}}" />-->
+												<!--<div v-show="bigPic" v-on:click="hiddenBigPic()" class="icain-mark-layer" transition="mark"></div>
+												<div class="icain-main-mark-layer" style="position: fixed; left: 0; right: 0; top: 0; bottom: 0;"></div>
+					  							<img v-show="bigPic" class="icain-bigPic-layer" transition="bigPic" :src="showPicSrc" alt="大图" />-->
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="class-comment" v-if="item.COMNUM > 0">
+									<div @click="checkContact(item.CLA_ID,$index)"><span>点击查看评论</span></div>
+									<ul class="comment-list" :class="{'comment-list-show':activeNameComment===item.CLA_ID}">
+										<li v-for="comment in item.commentsList">
+											<div class="class-comment-content">
+												<a class="class-commenter">{{comment.critic_NAME}}:</a>{{comment.com_CONTENT}}</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!--上拉加载提示-->
+					<div class="infinite-scroll-preloader" style="margin-top: -70px; padding-bottom: 70px;">
+					</div>
+				</div>
+			</div>
+
+			<!--评论弹框-->
+			<div class="custom-dialog" hidden="hidden">
+				<div class="custom-dialog-layer">
+					<div class="custom-dialog-box">
+						<div class="custom-dialog-txt">
+							<textarea id="comment-content" name="comment-content" placeholder="输入评论..."></textarea>
+						</div>
+						<div class="buttons">
+							<div class="button-box left-button">
+								<a class="dialog-button cancel" id="dialog-button-cancel">取消</a>
+							</div>
+							<div class="button-box ">
+								<a class="dialog-button ok" id="dialog-button-ok">发表</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

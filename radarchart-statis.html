@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="page" id="radarchart-statis">
+        <!-- 标题栏 -->
+	        <v-bar title="班级成绩分析">
+	           <a class="icon icon-left pull-left back no-transition" slot="left"></a>
+	           <a class="icon  pull-right back no-transition close-popover" slot="left"></a>
+	        </v-bar>
+		    <div  class="content radarchart-statis-content ">
+		     <ul class="statis-wrap">
+		     	<li class="statis-item">
+		     		<!--<select id="statis">
+					  <option v-for="item in items" value="item.VALUE">{{item.VALUE}}</option>
+					</select>-->
+					<select id="statis"  name="">   
+					  <option   value="1">优秀及格率</option>   
+					  <option   value="2">成绩评级数</option>   
+					 </select>
+		     	</li>
+		     </ul>
+		     <div class="radarchartTea-total" v-show="show">
+			   	<div class="row radarchartTea-total-list">
+			      <div class="col-25">及格率:</div>
+			      <div class="col-75"><div  class="cc0" :style="{width:itemsTotal.qualified}">{{itemsTotal.qualified}}</div></div>
+			    </div>
+			    	<div class="row radarchartTea-total-list">
+			      <div class="col-25">优秀率:</div>
+			      <div class="col-75"><div  class="cc1" :style="{width:itemsTotal.outstanding}">{{itemsTotal.outstanding}}</div></div>
+			    </div>
+             </div>
+              <div class="radarchartTea-total" v-show="showDetail">
+			   	<div class="row radarchartTea-total-list">
+			      <div class="col-40">优秀人数:</div>
+			      <div class="col-60"><span>{{itemsTotal.good}}</span></div>
+			    </div>
+			    <div class="row radarchartTea-total-list">
+			      <div class="col-40">良好人数:</div>
+			      <div class="col-60"><span>{{itemsTotal.fine}}</span></div>
+			    </div>
+			    <div class="row radarchartTea-total-list">
+			      <div class="col-40">中等人数:</div>
+			      <div class="col-60"><span>{{itemsTotal.mid}}</span></div>
+			    </div>
+			    <div class="row radarchartTea-total-list">
+			      <div class="col-40">及格人数:</div>
+			      <div class="col-60"><span>{{itemsTotal.qua}}</span></div>
+			    </div>
+			     <div class="row radarchartTea-total-list">
+			      <div class="col-40">不及格人数:</div>
+			      <div class="col-60"><span>{{itemsTotal.bad}}</span></div>
+			    </div>
+             </div>
+		    </div>
+		    	
+	   </div>
+	</body>
+</html>

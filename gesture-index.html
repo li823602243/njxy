@@ -1,0 +1,49 @@
+<!--
+页面：手势密码
+创建：左武洲
+时间：2016/7/29
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>手势密码</title>
+	</head>
+	
+	<body>
+		<div class="page bg-white" id="gesture-index">
+			<v-bar title="手势密码">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+			</v-bar>
+			<div class="content">
+
+				<div class="list-block" style="margin-top: 0;">
+					<ul class="mine-setting-list">
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">手势密码</div>
+								<div class="item-after">
+					              <label class="label-switch">
+					                <input id="gestureIsUsedBtn" type="checkbox" checked="checked">
+					                <div class="checkbox"></div>
+					              </label>
+					            </div>
+							</div>
+						</li>
+						<li id="changeGestureBtn" class="item-content">
+							<div class="item-inner">
+								<div class="item-title">修改手势密码</div>					
+							</div>
+						</li>
+						<li class="item-content" @click="clickMe">
+							<div class="item-inner">
+								<div class="item-title">忘记手势密码</div>
+							</div>
+						</li>					
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

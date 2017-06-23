@@ -1,0 +1,1297 @@
+{
+    "@platforms": ["android", "iPhone", "iPad"],
+    "id": "com.jsruiyin.xyxx",/*应用的标识，创建应用时自动生成，勿手动修改*/
+    "name": "小营小学",/*应用名称，程序桌面图标名称*/
+    "version": {
+        "name": "1.1",/*应用版本名称*/
+        "code": "15"
+    },
+    "description": "",/*应用描述信息*/
+    "icons": {
+        "72": "icon.png"
+    },
+    "launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "developer": {
+        "name": "",/*开发者名称*/
+        "email": "",/*开发者邮箱地址*/
+        "url": ""/*开发者个人主页地址*/
+    },
+    "permissions": {
+        
+        
+        
+        "Cache": {
+            "description": "管理应用缓存"
+        },
+        "Camera": {
+            "description": "访问摄像头"
+        },
+        "Console": {
+            "description": "跟踪调试输出日志"
+        },
+        
+        
+        "Downloader": {
+            "description": "文件下载管理"
+        },
+        "Events": {
+            "description": "应用扩展事件"
+        },
+        "File": {
+            "description": "访问本地文件系统"
+        },
+        "Gallery": {
+            "description": "访问系统相册"
+        },
+        
+        "Invocation": {
+            "description": "使用Native.js能力"
+        },
+        
+        
+        "Storage": {
+            "description": "管理应用本地数据"
+        },
+        
+        "Uploader": {
+            "description": "管理文件上传任务"
+        },
+        "Runtime": {
+            "description": "访问运行期环境"
+        },
+        "XMLHttpRequest": {
+            "description": "跨域网络访问"
+        },
+        "Zip": {
+            "description": "文件压缩与解压缩"
+        },
+        
+        
+        
+        "Webview":{
+        	"description": "窗口管理"
+        },
+        "NativeUI":{
+        	"description": "原生UI控件"
+        },
+        "Navigator":{
+        	"description": "浏览器信息"
+        },
+        "NativeObj":{
+        	"description": "原生对象"
+        },"Push":{},"Barcode":{}
+    },
+    "plus": {
+        "splashscreen": {
+            "autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+            "waiting": false,"delay":"0"/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/
+        },
+        "popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+        "runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+        "signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保���给应用签名，暂不使用*/
+        "distribute": {"plugins":{"push":{"igexin":{"appid":"H5107671B","appkey":"xxxx","appsecret":"xxx"}}},
+            "apple": {
+                "appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+                "mobileprovision": "",/*iOS应用打包配置文件*/
+                "password": "",/*iOS应用打包个人证书导入密码*/
+                "p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+                "devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+                "UIReserveStatusbarOffset": false,
+                "frameworks":[
+                ]/*调用Native.js调用原生Objective-c API需要引用的FrameWork，如需调用GameCenter，则添加"GameKit.framework"*/
+            },
+            "google": {
+                "packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+                "keystore": "",/*Android应用打包使用的密钥库文件*/
+                "password": "",/*Android应用打包使用密钥库中证书的密码*/
+                "aliasname": "",/*Android应用打包���用密钥库中证书的别名*/
+               "ImmersedStatusbar":true,
+               "permissions": ["<uses-permission android:name=\"android.permission.GET_TASKS\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
+				/*使用Native.js调用原生安卓API需要使用到的系统权限*/
+            },
+            "orientation": [
+                "portrait-primary"
+            ],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+            "icons": {
+                "ios": {
+                    "prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+                    "auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+                    "iphone": {
+                        "normal": "unpackage/res/icons/57x57.png", /*iPhone3/3GS程序图标，分辨率：57x57*/
+                        "retina": "unpackage/res/icons/114x114.png", /*iPhone4程序图标，分辨率：114x114*/
+                        "retina7": "unpackage/res/icons/120x120.png", /*iPhone4S/5/6程序图标，分辨率：120x120*/
+			"retina8": "unpackage/res/icons/180x180.png", /*iPhone6 Plus程序图标，分辨率：180x180*/
+                        "spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+                        "spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+                        "spotlight-retina7": "unpackage/res/icons/80x80.png", /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal": "unpackage/res/icons/29x29.png", /*iPhone4设置页面程序图标，分辨率：29x29*/
+                        "settings-retina": "unpackage/res/icons/58x58.png", /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+			"settings-retina8": "unpackage/res/icons/87x87.png" /*iPhone6Plus设置页面程序图标，分辨率：87x87*/
+                    },
+                    "ipad": {
+                        "normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+                        "retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+                        "normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+                        "retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+                        "spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+                        "spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+                        "spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+                        "spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+                        "settings-retina": "unpackage/res/icons/58x58.png" /*iPad高分屏设置页面程序图标，分辨率：58x58*/
+                    }
+                },
+                "android": {
+                    "mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+                    "ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+                    "hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+                    "xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+                    "xxhdpi": "unpackage/res/icons/144x144.png","xxxhdpi":"unpackage/res/icons/180x180.png"/*1080P 高分屏程序图标，分辨率：144x144*/
+                }
+            },
+            "splashscreen": {
+                "ios": {
+                    "iphone": {"retina55":"D:/江苏瑞银/项目/南京一幼/iphone/1242x2208.png","retina47":"D:/江苏瑞银/项目/南京一幼/iphone/750x1334.png","retina40":"D:/江苏瑞银/项目/南京一幼/iphone/640x1136.png","retina55l":"D:/江苏瑞银/项目/南京一幼/iphone/1242x2208.png"
+                         /*iPhone3启动图片选，分辨率：320x480*/
+                        /*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+                        /*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+                        /*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+                        /*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+                        /*5.5 英寸设备(iPhone6 Plus)横屏启动图片，分辨率：2208x1242*/
+                    },
+                    "ipad": {"portrait":"D:/江苏瑞银/项目/南京一幼/iphone/1242x2208.png","portrait7":"D:/江苏瑞银/项目/南京一幼/iphone/750x1334.png","landscape":"D:/江苏瑞银/项目/南京一幼/iphone/1242x2208.png","landscape7":"D:/江苏瑞银/项目/南京一幼/iphone/iphone/1242x2208.png","portrait-retina":"D:/江苏瑞银/项目/南京一幼/iphone/1242x2208.png","portrait-retina7":"D:/江苏瑞银/项目/南京一幼/iphone/750x1334.png","landscape-retina":"D:/江苏瑞银/项目/南京一幼/iphone/1242x2208.png","landscape-retina7":"D:/江苏瑞银/项目/南京一幼/iphone/1242x2208.png"
+                         /*iPad竖屏启动图片，分辨率：768x1004*/
+                        /*iPad高分屏竖屏图片，分辨率：1536x2008*/
+                         /*iPad横屏启动图片，分辨率：1024x748*/
+                         /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+                         /*iPad iOS7竖屏启动图��，分辨率：768x1024*/
+                        /*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+                         /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+                        /*iPad iOS7高分屏横屏启动图片，分辨率：2048x1536*/
+                    }
+                },
+                "android": {"hdpi":"D:/江苏瑞银/项目/南京一幼/iphone/320x480.png","xhdpi":"D:/江苏瑞银/项目/南京一幼/iphone/640x960.png","xxhdpi":"D:/江苏瑞银/项目/南京一幼/iphone/640x1136.png"
+                     /*普通屏启动图片，分辨率：240x282*/
+                     /*大屏启动图片，分辨率：320x442*/
+                     /*高分屏启动图片，分辨率：480x762*/
+                     /*720P高分屏启动图片，分辨率：720x1242*/
+                    /*1080P高分屏启动图片，分辨率：1080x1882*/
+                }
+            },"debug":true
+        }
+    },
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"assets/js/vue.min.js",
+					"assets/js/light7.min.js",
+					"components/swiper.js",
+					"app.js",
+					"components/bar.js",
+					"libs/swiper/light7-swiper.min.css",
+					"components/nav.js",
+					"assets/css/main.css",
+					"assets/css/light7.min.css",
+					"assets/js/jquery.min.js",
+					"components/circlesItem.js",
+					"data.js",
+					"libs/swiper/light7-swiper.min.js",
+					"views/circles/circles.html",
+					"assets/img/circles/yySurroundings.png",
+					"assets/img/banner/banner1.jpg",
+					"assets/img/banner/banner.png",
+					"assets/img/banner/banner2.png",
+					"assets/img/circles/yyIntroduce.png",
+					"circles.html",
+					"assets/css/yy-circle.css",
+					"assets/css/second.css",
+					"assets/img/yyIntroduce.png",
+					"assets/img/icon_heart.png",
+					"assets/img/btn_heart_normal.png",
+					"assets/img/main/Document.png",
+					"assets/img/main/file.png",
+					"assets/img/main/app.png",
+					"assets/img/main/order.png",
+					"assets/img/banner1.jpg",
+					"assets/img/banner7.png",
+					"assets/img/banner6.png",
+					"assets/img/main/helloMain.png",
+					"assets/img/main/food.png",
+					"assets/img/main/announcement.png",
+					"assets/img/banner4.png",
+					"assets/img/main/vote.png",
+					"assets/img/banner2.png",
+					"main.html",
+					"assets/img/banner3.png",
+					"assets/img/yySurroundings .png",
+					"assets/img/yy-circleAdd.png",
+					"yy-circle.html",
+					"assets/img/btn_comment.png",
+					"assets/img/message/message-userImg1.png",
+					"assets/img/message/message-calendar.png",
+					"assets/img/message/message-mail.png",
+					"assets/img/message/message-userImg2.png",
+					"libs/vue-touch/vue-touch.min.js",
+					"components/messageItem.js",
+					"libs/vue-touch/hammer.min.js",
+					"libs/swipeout/light7-swipeout.css",
+					"libs/swipeout/light7-swipeout.js",
+					"message-list.html",
+					"assets/js/cn.js",
+					"assets/img/main/message.png",
+					"libs/huanxin/easemob.im-1.1.js",
+					"assets/img/main/main.png",
+					"assets/img/main/mine.png",
+					"libs/huanxin/easemob.im-1.1.shim.js",
+					"assets/img/bar/icon_yiyouquan.png",
+					"assets/img/main/tel.png",
+					"libs/huanxin/easemob.im.config.js",
+					"libs/huanxin/strophe.js",
+					"assets/img/main/holiday.png",
+					"assets/img/main/dining.png",
+					"assets/img/main/Experts.png",
+					"assets/img/main/schedules.png",
+					"assets/img/login/login-yy-logo.png",
+					"assets/img/login/login_background.png",
+					"components/login-bar.js",
+					"assets/img/login/icon-login-username.png",
+					"assets/img/login/icon-login-password.png",
+					"login-login.html",
+					"yy-public.html",
+					"assets/js/swiper.min.js",
+					"login-register.html",
+					"assets/img/login/icon-login-phone.png",
+					"assets/img/login/icon-verification-code.png",
+					"fileManage.html",
+					"assets/css/yy-circle.min.css",
+					"assets/js/cn.min.js",
+					"assets/js/H5lock.min.js",
+					"assets/css/second.min.css",
+					"notice-detail.html",
+					"libs/md5/md5-min.js",
+					"assets/js/utils.js",
+					"assets/img/mine/icon-mine-collect.png",
+					"assets/img/mine/icon-mine-welfare.png",
+					"assets/img/circles/test_1.png",
+					"assets/img/mine/icon-mine-apply.png",
+					"assets/img/mine/icon-mine-setting.png",
+					"assets/img/mine/icon-camera.png",
+					"assets/img/mine/icon-mine-payroll.png",
+					null,
+					"assets/js/H5lock.js",
+					"assets/js/H5lock.publish.js",
+					"assets/img/login/login-login.png",
+					"assets/img/login/login-look.png",
+					"data.min.js",
+					"app.min.js",
+					"assets/img/login/login-register.png",
+					"assets/css/main.min.css",
+					"gesture-login.html",
+					"assets/img/login/logo.png",
+					"assets/img/main/question.png",
+					"assets/img/main/mailbox.png",
+					"assets/img/main/extperts.png",
+					"assets/js/light7.js",
+					"assets/img/banner/left.png",
+					"assets/img/mine/children.png",
+					"assets/img/circles/test_3.png",
+					"assets/img/school.png",
+					"assets/js/faces.js",
+					"libs/huanxin/WebIM.config.js",
+					"libs/huanxin/websdk-1.1.2.js",
+					"libs/huanxin/websdk.shim.js",
+					"assets/js/chat.js",
+					"assets/img/class.png",
+					"assets/img/btn_heart_pressed.png",
+					"assets/img/mainimg/menology.png",
+					"assets/img/mainimg/notice.png",
+					"assets/img/mainimg/file.png",
+					"assets/img/mainimg/vote.png",
+					"assets/img/mainimg/call.png",
+					"assets/img/mainimg/food.png",
+					"assets/js/echarts.min.js",
+					"assets/img/mainimg/bgwhite.png",
+					"assets/img/mainimg/score.png",
+					"assets/img/mainimg/bgschool.png",
+					"assets/img/mainimg/mail.png",
+					"assets/img/mainimg/question.png",
+					"assets/img/mainimg/stfood.png",
+					"assets/img/mainimg/visit.png",
+					"assets/img/mainimg/classtable.png",
+					"libs/lightbox/lightbox.min.js",
+					"libs/lightbox/lightbox.min.css",
+					"assets/img/school/school4.jpg",
+					"assets/img/school/school5.jpg",
+					"assets/img/school/school1.jpg",
+					"assets/img/school/school3.jpg",
+					"assets/img/school/school2.jpg",
+					"assets/img/mainimg/question2.png",
+					"assets/img/mainimg/visit1.png",
+					"assets/img/mainimg/XZXX.png",
+					"assets/img/banner/xiaoyin_banner.png",
+					"assets/img/banner/ac2.jpg",
+					"assets/img/banner/ac.jpg",
+					"assets/img/banner/aa2.jpg",
+					"assets/img/banner/aa1.jpg",
+					"assets/img/circles/T.png",
+					"assets/img/mainimg/wa.png",
+					"assets/img/mainimg/vac.png",
+					"assets/img/mainimg/course_table.png",
+					"assets/img/mainimg/results_list.png",
+					"assets/img/mainimg/more.png",
+					"assets/img/mainimg/tuopiao.png",
+					"assets/img/mainimg/barcode.png",
+					"assets/img/mainimg/news.png",
+					"assets/img/mainimg/holiday.png",
+					"assets/img/systemheader.png",
+					"assets/js/zCalendar.js",
+					"assets/css/zCalendar.css",
+					"libs/hammer.min.js",
+					"assets/js/njyy-api.js"
+				],
+				"refer": [
+					"barcoderesult.html"
+				],
+				"priority": 0
+			},
+			"views/circles/circles.html": {
+				"resources": [
+					"data/circlesItem.json",
+					"assets/img/circles/test_3.png",
+					"assets/img/circles/test_2.png",
+					"assets/img/circles/test_4.png",
+					"assets/img/circles/test_1.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"circles.html": {
+				"resources": [
+					"assets/img/banner/banner1.jpg",
+					"assets/img/banner/banner.png",
+					"assets/img/banner/banner2.png",
+					"assets/img/circles/yySurroundings.png",
+					"assets/img/circles/yyIntroduce.png",
+					"assets/img/circles/test_3.png",
+					"assets/img/circles/test_2.png",
+					"assets/img/circles/test_4.png",
+					"data/circlesItem.json",
+					"assets/img/circles/test_1.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"main.html": {
+				"resources": [
+					"assets/img/back.png",
+					"menology.html",
+					"assets/img/yy-circleAdd.png",
+					"assets/img/calendar/calen-work.png",
+					"assets/img/calendar/calen-personal.png",
+					"vacation.html",
+					"notice.html",
+					"yy-circle.html",
+					"assets/img/btn_comment.png",
+					"message-list.html",
+					"address.html",
+					"assets/img/school.png",
+					"assets/img/class.png",
+					"page-list-vacation.html",
+					"assets/img/calendar/calen-back.png",
+					"call.html",
+					"assets/img/mine/icon-mine-apply.png",
+					"assets/img/mine/icon-mine-collect.png",
+					"assets/img/mine/icon-mine-setting.png",
+					"mine-index.html",
+					"assets/img/mine/icon-camera.png",
+					"assets/img/mine/icon-mine-welfare.png",
+					"assets/img/mine/icon-mine-payroll.png",
+					"assets/img/mine/icon-arrows-right.png",
+					"assets/img/mine/icon-edit.png",
+					"canteen.html",
+					"voteList.html",
+					"assets/img/main/Experts.png",
+					"assets/img/main/Document.png",
+					"assets/img/main/holiday.png",
+					"assets/img/main/file.png",
+					"assets/img/main/helloMain.png",
+					"assets/img/main/app.png",
+					"assets/img/banner4.png",
+					"assets/img/main/food.png",
+					"assets/img/main/order.png",
+					"assets/img/main/dining.png",
+					"assets/img/main/schedules.png",
+					"assets/img/main/announcement.png",
+					"assets/img/main/vote.png",
+					"notice-detail.html",
+					"assets/img/canteen-holiday2.png",
+					"fileList.html",
+					"assets/img/canteen-holiday1.png",
+					"assets/img/banner1.jpg",
+					"assets/img/banner2.png",
+					"assets/img/banner7.png",
+					"assets/img/banner6.png",
+					"assets/img/banner3.png",
+					"assets/img/btn_heart_pressed.png",
+					"assets/img/titmetable/weather.png",
+					"schoolTimetable.html",
+					"voteDetail.html",
+					"assets/img/main/mailbox.png",
+					"assets/img/main/question.png",
+					"assets/img/main/extperts.png",
+					"assets/img/circles/test_1.png",
+					"fileManage.html",
+					"assets/img/calendar/workList.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"menology.html": {
+				"resources": [
+					"scheduleAdd.html",
+					"assets/img/yy-circleAdd.png",
+					"assets/img/calendar/calen-work.png",
+					"assets/img/calendar/calen-personal.png",
+					"main.html",
+					"assets/img/calendar/workList.png",
+					"assets/img/menology/Admin.png",
+					"assets/img/menology/recept.png",
+					"assets/img/menology/logist.png",
+					"assets/img/menology/teache.png",
+					"libs/swiper/light7-swiper.min.css",
+					"libs/lightbox/lightbox.min.css",
+					"assets/css/main.css",
+					"assets/css/zCalendar.css",
+					"assets/css/light7.min.css",
+					"libs/swipeout/light7-swipeout.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"scheduleAdd.html": {
+				"resources": [
+					"menology.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"vacation.html": {
+				"resources": [
+					"main.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"yy-circle.html": {
+				"resources": [
+					"assets/img/main/Document.png",
+					"assets/img/main/file.png",
+					"assets/img/main/app.png",
+					"assets/img/banner4.png",
+					"assets/img/main/order.png",
+					"assets/img/main/vote.png",
+					"assets/img/banner1.jpg",
+					"main.html",
+					"assets/img/banner2.png",
+					"assets/img/banner7.png",
+					"assets/img/banner6.png",
+					"assets/img/banner3.png",
+					"assets/img/main/helloMain.png",
+					"assets/img/main/food.png",
+					"assets/img/main/announcement.png",
+					"yy-publishCircle.html",
+					"yyIntroduce.html",
+					"message-list.html",
+					"assets/img/main/main.png",
+					"assets/img/main/tel.png",
+					"assets/img/main/message.png",
+					"assets/img/main/mine.png",
+					"assets/img/bar/icon_yiyouquan.png",
+					"assets/img/main/holiday.png",
+					"assets/img/main/dining.png",
+					"assets/img/main/Experts.png",
+					"assets/img/main/schedules.png",
+					"assets/img/btn_heart_pressed.png",
+					"yySurroundings.html",
+					"assets/img/banner/banner1.jpg",
+					"assets/img/yy-circleAdd.png",
+					"assets/img/yySurroundings .png",
+					"assets/img/yyIntroduce.png",
+					"assets/img/btn_comment.png",
+					"assets/img/banner/banner2.png",
+					"assets/img/btn_heart_normal.png",
+					"address.html",
+					"assets/img/mine/icon-mine-apply.png",
+					"assets/img/mine/icon-mine-collect.png",
+					"assets/img/mine/icon-mine-setting.png",
+					"mine-index.html",
+					"assets/img/mine/icon-camera.png",
+					"assets/img/mine/icon-mine-welfare.png",
+					"assets/img/mine/icon-mine-payroll.png",
+					"assets/img/mine/icon-arrows-right.png",
+					"assets/img/mine/icon-edit.png",
+					"assets/img/school.png",
+					"assets/img/class.png",
+					"assets/img/main/mailbox.png",
+					"assets/img/main/question.png",
+					"assets/img/main/extperts.png",
+					"notice-detail.html",
+					"assets/img/circles/test_1.png",
+					"assets/img/upload-picture.png",
+					"assets/img/circles/test_4.png",
+					"assets/img/circles/test_3.png",
+					null,
+					"assets/img/mainimg/logo.png",
+					"assets/img/banner/student.png",
+					"assets/img/banner/in.png",
+					"assets/img/banner/in1.png",
+					"assets/img/banner/st2.png",
+					"assets/img/banner/xiaoyin_banner.png",
+					"assets/img/circles/T.png",
+					"assets/img/systemheader.png",
+					"libs/swiper/light7-swiper.min.css",
+					"libs/lightbox/lightbox.min.css",
+					"assets/css/main.css",
+					"assets/css/light7.min.css",
+					"libs/swipeout/light7-swipeout.css",
+					"assets/css/zCalendar.css",
+					"assets/img/circles/btn_comment.png",
+					"assets/img/circles/btn_heart_normal.png",
+					"assets/img/circles/btn_heart_pressed.png",
+					"resultsStudents.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"yy-publishCircle.html": {
+				"resources": [
+					"yy-circle.html",
+					"assets/img/upload-picture.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"message-list.html": {
+				"resources": [
+					"assets/img/main/Document.png",
+					"assets/img/main/file.png",
+					"assets/img/main/app.png",
+					"assets/img/banner4.png",
+					"assets/img/main/order.png",
+					"assets/img/main/vote.png",
+					"assets/img/banner1.jpg",
+					"main.html",
+					"assets/img/banner2.png",
+					"assets/img/banner7.png",
+					"assets/img/banner6.png",
+					"assets/img/banner3.png",
+					"assets/img/main/helloMain.png",
+					"assets/img/main/food.png",
+					"assets/img/main/announcement.png",
+					"address.html",
+					"assets/img/school.png",
+					"assets/img/class.png",
+					"assets/img/main/mailbox.png",
+					"assets/img/main/question.png",
+					"assets/img/main/holiday.png",
+					"assets/img/main/dining.png",
+					"assets/img/main/extperts.png",
+					"assets/img/main/schedules.png",
+					"yy-circle.html",
+					"vacation-information.html",
+					"libs/swiper/light7-swiper.min.css",
+					"libs/lightbox/lightbox.min.css",
+					"assets/css/main.css",
+					"assets/css/zCalendar.css",
+					"assets/css/light7.min.css",
+					"libs/swipeout/light7-swipeout.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"address.html": {
+				"resources": [
+					"page-list-vacation.html",
+					"message-list.html",
+					"assets/img/main/Document.png",
+					"assets/img/main/holiday.png",
+					"assets/img/main/file.png",
+					"assets/img/main/app.png",
+					"assets/img/banner4.png",
+					"assets/img/main/order.png",
+					"assets/img/main/dining.png",
+					"assets/img/main/vote.png",
+					"assets/img/main/Experts.png",
+					"assets/img/banner1.jpg",
+					"main.html",
+					"assets/img/banner2.png",
+					"assets/img/banner7.png",
+					"assets/img/banner6.png",
+					"assets/img/banner3.png",
+					"assets/img/main/helloMain.png",
+					"assets/img/main/food.png",
+					"assets/img/main/announcement.png",
+					"assets/img/main/schedules.png",
+					"assets/img/school.png",
+					"assets/img/class.png",
+					"yy-circle.html",
+					"assets/img/btn_heart_pressed.png",
+					"assets/img/mine/icon-mine-apply.png",
+					"assets/img/mine/icon-mine-collect.png",
+					"assets/img/mine/icon-mine-setting.png",
+					"mine-index.html",
+					"assets/img/mine/icon-camera.png",
+					"assets/img/mine/icon-mine-welfare.png",
+					"assets/img/mine/icon-mine-payroll.png",
+					"assets/img/mine/icon-arrows-right.png",
+					"assets/img/mine/icon-edit.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page-list-vacation.html": {
+				"resources": [
+					"main.html",
+					"repair-information.html",
+					"vacation-information.html",
+					"assets/img/main/Document.png",
+					"assets/img/main/mailbox.png",
+					"assets/img/main/question.png",
+					"assets/img/main/holiday.png",
+					"assets/img/main/file.png",
+					"assets/img/main/app.png",
+					"assets/img/banner4.png",
+					"assets/img/main/order.png",
+					"assets/img/main/dining.png",
+					"assets/img/main/vote.png",
+					"assets/img/main/extperts.png",
+					"assets/img/banner1.jpg",
+					"assets/img/banner2.png",
+					"assets/img/banner7.png",
+					"assets/img/banner6.png",
+					"assets/img/banner3.png",
+					"assets/img/main/helloMain.png",
+					"assets/img/main/food.png",
+					"assets/img/main/announcement.png",
+					"assets/img/main/schedules.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"login-login.html": {
+				"resources": [
+					"assets/img/login/login-input-box-bg.png",
+					"assets/img/login/login-button-bg.png",
+					"assets/img/banner/banner1.jpg",
+					"assets/img/yy-circleAdd.png",
+					"yy-circle.html",
+					"assets/img/yySurroundings .png",
+					"assets/img/yyIntroduce.png",
+					"assets/img/btn_comment.png",
+					"assets/img/banner/banner2.png",
+					"assets/img/btn_heart_normal.png",
+					"assets/img/login/icon-login-username.png",
+					"assets/img/login/icon-login-password.png",
+					"assets/img/btn_heart_pressed.png",
+					"assets/img/login/icon-login-phone.png",
+					"login-retrieve-password.html",
+					"assets/img/login/icon-verification-code.png",
+					"assets/img/login/login-yy-logo.png",
+					"assets/img/banner/left.png",
+					"assets/img/circles/test_3.png",
+					"assets/img/login/logo.png",
+					"assets/img/banner/in1.png",
+					"assets/img/banner/st2.png",
+					"assets/img/login/icon_login_btn_enter.png",
+					"assets/img/banner/xiaoyin_banner.png",
+					"assets/img/circles/T.png",
+					"assets/img/circles/btn_comment.png",
+					"assets/img/circles/btn_heart_normal.png",
+					"assets/img/circles/btn_heart_pressed.png",
+					"resultsStudents.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"mine-index.html": {
+				"resources": [
+					"address.html",
+					"assets/img/school.png",
+					"assets/img/circles/test_1.png",
+					"assets/img/class.png",
+					"main.html",
+					"mine-setting.html",
+					"assets/img/calendar/calen-back.png",
+					"mine-my-payroll.html",
+					"assets/img/back.png",
+					"mine-my-welfare.html",
+					"assets/img/mine/icon-mine-apply.png",
+					"assets/img/mine/icon-mine-collect.png",
+					"assets/img/mine/icon-mine-setting.png",
+					"assets/img/mine/icon-camera.png",
+					"assets/img/mine/icon-mine-welfare.png",
+					"assets/img/mine/icon-mine-payroll.png",
+					"assets/img/mine/icon-arrows-right.png",
+					"assets/img/mine/icon-edit.png",
+					"page-list-vacation.html",
+					"message-list.html",
+					"assets/img/main/Document.png",
+					"assets/img/main/mailbox.png",
+					"assets/img/main/question.png",
+					"assets/img/main/holiday.png",
+					"assets/img/main/file.png",
+					"assets/img/main/app.png",
+					"assets/img/banner4.png",
+					"assets/img/main/order.png",
+					"assets/img/main/dining.png",
+					"assets/img/main/vote.png",
+					"assets/img/main/extperts.png",
+					"assets/img/banner1.jpg",
+					"assets/img/banner2.png",
+					"assets/img/banner7.png",
+					"assets/img/banner6.png",
+					"assets/img/banner3.png",
+					"assets/img/main/helloMain.png",
+					"assets/img/main/food.png",
+					"assets/img/main/announcement.png",
+					"assets/img/main/schedules.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"yy-public.html": {
+				"resources": [
+					"assets/img/main/main.png",
+					"assets/img/main/tel.png",
+					"assets/img/main/message.png",
+					"assets/img/main/mine.png",
+					"assets/img/bar/icon_yiyouquan.png",
+					"message-list.html",
+					"assets/img/banner/banner1.jpg",
+					"assets/img/banner/banner.png",
+					"assets/img/yySurroundings .png",
+					"assets/img/yyIntroduce.png",
+					"assets/img/icon_heart.png",
+					"assets/img/banner/banner2.png",
+					"assets/img/btn_heart_normal.png",
+					"assets/img/circles/test_3.png",
+					"expertAnswer.html",
+					"activity-detail.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"login-register.html": {
+				"resources": [
+					"assets/img/login/login-testcode-input-box-bg.png",
+					"assets/img/login/login-input-box-bg.png",
+					"assets/img/login/login-button-bg.png",
+					"assets/img/login/icon-login-phone.png",
+					"assets/img/banner/left.png",
+					"assets/img/login/icon-verification-code.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"notice.html": {
+				"resources": [
+					"notice-detail.html",
+					"yy-circle.html",
+					"assets/img/btn_heart_pressed.png",
+					"main.html",
+					"assets/img/systemheader.png",
+					"libs/swiper/light7-swiper.min.css",
+					"libs/lightbox/lightbox.min.css",
+					"assets/css/main.css",
+					"assets/css/light7.min.css",
+					"libs/swipeout/light7-swipeout.css",
+					"news-detail.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"voteList.html": {
+				"resources": [
+					"yy-circle.html",
+					"voteDetail.html",
+					"addVote.html",
+					"main.html",
+					"assets/img/yy-circleAdd.png",
+					"assets/img/send-vote.png",
+					"libs/swiper/light7-swiper.min.css",
+					"libs/lightbox/lightbox.min.css",
+					"assets/css/main.css",
+					"assets/css/zCalendar.css",
+					"assets/css/light7.min.css",
+					"libs/swipeout/light7-swipeout.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"canteen.html": {
+				"resources": [
+					"assets/img/canteen-holiday2.png",
+					"assets/img/canteen-holiday1.png",
+					"assets/img/banner/banner1.jpg",
+					"assets/img/banner/banner2.png",
+					"assets/img/canteen/bg_food1.png",
+					"assets/img/canteen/bg_food2.png",
+					"assets/img/canteen/icon_food1.png",
+					"assets/img/canteen/icon_cup1.png",
+					"assets/img/canteen/icon_food3.png",
+					"assets/img/canteen/icon_food4.png",
+					"assets/img/canteen/icon_food2.png",
+					"assets/img/canteen/icon_cup3.png",
+					"assets/img/canteen/icon_cup2.png",
+					"assets/img/canteen/icon_cup5.png",
+					"assets/img/canteen/icon_cup4.png",
+					"assets/img/canteen/icon_food5.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"login-retrieve-password.html": {
+				"resources": [
+					"assets/img/login/login-testcode-input-box-bg.png",
+					"assets/img/login/icon-login-phone.png",
+					"assets/img/login/icon-verification-code.png",
+					"assets/img/banner/left.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"fileManage.html": {
+				"resources": [
+					"data/fileManage.json",
+					"data/fileManage2.json",
+					"assets/img/banner/1.png",
+					"assets/img/banner/4.png",
+					"assets/img/banner/3.png",
+					"assets/img/banner/2.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"addVote.html": {
+				"resources": [
+					"voteList.html",
+					"assets/img/send-vote.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"voteDetail.html": {
+				"resources": [
+					"voteList.html",
+					"voteDetail.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"notice-detail.html": {
+				"resources": [
+					"notice.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"mine-setting.html": {
+				"resources": [
+					"password-index.html",
+					"gesture-index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"password-index.html": {
+				"resources": [
+					"password-change.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"mine-my-payroll.html": {
+				"resources": [
+					"assets/img/btn_heart_pressed.png",
+					"yy-circle.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"favorite.html": {
+				"resources": [
+					"yy-circle-detail.html",
+					"assets/img/circles/yyIntroduce.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"yySurroundings.html": {
+				"resources": [
+					"assets/img/btn_heart_pressed.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"gesture-index.html": {
+				"resources": [
+					"gesture-panel.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"gesture-panel.html": {
+				"resources": [
+					"yy-circle.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"gesture-login.html": {
+				"resources": [
+					"assets/img/banner/banner1.jpg",
+					"assets/img/yy-circleAdd.png",
+					"yy-circle.html",
+					"assets/img/yySurroundings .png",
+					"assets/img/yyIntroduce.png",
+					"assets/img/btn_comment.png",
+					"assets/img/banner/banner2.png",
+					"assets/img/btn_heart_normal.png",
+					"assets/img/login/icon-login-username.png",
+					"assets/img/login/icon-login-password.png",
+					"login-login.html",
+					"assets/img/banner/left.png",
+					"assets/img/btn_heart_pressed.png",
+					"assets/img/circles/test_3.png",
+					"assets/img/login/logo.png",
+					"assets/img/banner/student.png",
+					"assets/img/banner/in.png",
+					"assets/img/banner/in1.png",
+					"assets/img/banner/st2.png",
+					"assets/img/banner/xiaoyin_banner.png",
+					"assets/img/circles/T.png",
+					"assets/img/circles/btn_comment.png",
+					"assets/img/circles/btn_heart_normal.png",
+					"assets/img/circles/btn_heart_pressed.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"questionnaireSurvey.html": {
+				"resources": [
+					"assets/img/banner/banner.png",
+					"qusSurveyDetail.html",
+					"assets/img/mine/icon-arrows-right.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"qusSurveyDetail.html": {
+				"resources": [
+					"questionnaireResponse.html",
+					"assets/img/banner/banner.png",
+					"qusSurveyDetail.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"email.html": {
+				"resources": [
+					"creat-email.html",
+					"email-information.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"questionnaireResponse.html": {
+				"resources": [
+					"questionnaireSurvey.html",
+					"qusSurveyDetail.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"schoolTimetable.html": {
+				"resources": [
+					"assets/img/titmetable/weather.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"chat-panel.html": {
+				"resources": [
+					"assets/img/faces/ee_33.png",
+					"assets/img/faces/ee_32.png",
+					"assets/img/faces/ee_27.png",
+					"assets/img/faces/ee_19.png",
+					"assets/img/faces/ee_28.png",
+					"assets/img/faces/ee_11.png",
+					"assets/img/faces/ee_29.png",
+					"assets/img/faces/ee_2.png",
+					"assets/img/faces/ee_8.png",
+					"assets/img/faces/ee_25.png",
+					"assets/img/faces/ee_13.png",
+					"assets/img/faces/ee_12.png",
+					"assets/img/faces/ee_20.png",
+					"assets/img/faces/ee_7.png",
+					"assets/img/faces/ee_26.png",
+					"assets/img/faces/ee_1.png",
+					"assets/img/faces/ee_17.png",
+					"assets/img/faces/ee_5.png",
+					"assets/img/faces/ee_9.png",
+					"assets/img/faces/ee_35.png",
+					"assets/img/faces/ee_23.png",
+					"assets/img/faces/ee_3.png",
+					"assets/img/faces/ee_14.png",
+					"assets/img/faces/ee_31.png",
+					"assets/img/faces/ee_10.png",
+					"assets/img/faces/ee_22.png",
+					"assets/img/faces/ee_34.png",
+					"assets/img/faces/ee_21.png",
+					"assets/img/faces/ee_24.png",
+					"assets/img/faces/ee_30.png",
+					"assets/img/faces/ee_16.png",
+					"assets/img/faces/ee_18.png",
+					"assets/img/faces/ee_4.png",
+					"assets/img/faces/ee_15.png",
+					"assets/img/faces/ee_6.png",
+					"assets/img/circles/test_1.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"activity-detail.html": {
+				"resources": [
+					"activity-detail.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"mine-setting-public.html": {
+				"resources": [
+					"login-register.html",
+					"assets/img/login/icon-login-phone.png",
+					"assets/img/banner/left.png",
+					"assets/img/login/icon-verification-code.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"score.html": {
+				"resources": [
+					"assets/img/school/bgicon.png",
+					"assets/img/school/bgicon2.png",
+					"assets/img/mainimg/testheaderimg.jpg",
+					"radarchart.html",
+					"linechart.html",
+					"libs/swiper/light7-swiper.min.css",
+					"libs/lightbox/lightbox.min.css",
+					"assets/css/main.css",
+					"assets/css/light7.min.css",
+					"libs/swipeout/light7-swipeout.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"radarchart.html": {
+				"resources": [
+					"assets/img/mainimg/testheaderimg.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"classtable.html": {
+				"resources": [
+					"components/new_file.json",
+					"assets/img/classtable.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"teachertable.html": {
+				"resources": [
+					"assets/img/classtable.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page-myapply.html": {
+				"resources": [
+					"vacation-information.html",
+					"vacation.html",
+					"vacationStudent.html",
+					"assets/img/yy-circleAdd.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"resultsList.html": {
+				"resources": [
+					"resultsStudents.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"radarchart-tea.html": {
+				"resources": [
+					"assets/img/mainimg/testheaderimg.jpg",
+					"assets/img/systemheader.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"resultsStudents.html": {
+				"resources": [
+					"radarchart-tea.html",
+					"assets/img/mainimg/testheaderimg.jpg",
+					"radarchart-statis.html",
+					"radarchart-comment.html",
+					"assets/img/star_on.png",
+					"assets/img/star_off.png",
+					"libs/swiper/light7-swiper.min.css",
+					"libs/lightbox/lightbox.min.css",
+					"assets/css/main.css",
+					"assets/css/zCalendar.css",
+					"assets/css/light7.min.css",
+					"libs/swipeout/light7-swipeout.css",
+					"assets/img/evaluate/star_on.png",
+					"assets/img/evaluate/star_off.png",
+					"testType.html",
+					"classList.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"vacation-information.html": {
+				"resources": [
+					"page-myapply.html",
+					"yy-circle.html",
+					"page-vacationlist.html",
+					"message-list.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"barcode_scan.html": {
+				"resources": [
+					"barcoderesult.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"barcoderesult.html": {
+				"resources": [
+					"barcode_scan.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"testType.html": {
+				"resources": [
+					"resultsList.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"radarchart-comment.html": {
+				"resources": [
+					"assets/img/star_on.png",
+					"assets/img/star_off.png",
+					"comment-detail.html",
+					"resultsStudents.html",
+					"radarchart-comment.html",
+					"assets/img/evaluate/star_on.png",
+					"assets/img/evaluate/star_off.png",
+					"testType.html",
+					"classList.html",
+					"news.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"comment-detail.html": {
+				"resources": [
+					"radarchart-comment.html",
+					"assets/img/star_off.png",
+					"assets/img/evaluate/star_off.png",
+					"comment-detail.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"news.html": {
+				"resources": [
+					"notice-detail.html",
+					"assets/img/systemheader.png",
+					"news-detail.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"news-detail.html": {
+				"resources": [
+					"news.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page-vacationlist.html": {
+				"resources": [
+					"assets/img/yy-circleAdd.png",
+					"vacation-information.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page-vacation.html": {
+				"resources": [
+					"yy-circle.html",
+					"assets/img/yy-circleAdd.png",
+					"vacation-information.html",
+					"vacationStudent.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"classList.html": {
+				"resources": [
+					"resultsStudents.html"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"assets/img/banner/banner6.png",
+				"assets/img/banner/banner7.png",
+				"favicon.ico",
+				"data/swiper.json",
+				"assets/img/banner/banner4.png",
+				"assets/fonts/ratchicons.ttf",
+				"assets/img/banner/banner3.png",
+				"assets/fonts/ratchicons.svg",
+				"data/userInfo.json",
+				"assets/img/bar/bg_nav_bar.png",
+				"libs/plugin.log",
+				"assets/fonts/ratchicons.eot",
+				"assets/fonts/ratchicons.woff"
+			]
+		}
+	},
+	"unpackage":[
+	  "assets/fonts/ratchicons.eot",
+	  "assets/fonts/ratchicons.svg",
+	  "assets/fonts/ratchicons.ttf",
+	  "assets/fonts/ratchicons.woff",
+	  "assets/img/banner/banner3.png",
+	  "assets/img/banner/banner4.png",
+	  "assets/img/banner/banner6.png",
+	  "assets/img/banner/banner7.png",
+	  "assets/img/bar/bg_nav_bar.png",
+	  "data/swiper.json",
+	  "data/userInfo.json",
+	  "libs/plugin.log"
+	],"fullscreen":false
+}

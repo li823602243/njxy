@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>一幼圈</title>
+	</head>
+
+
+<body>
+<div class="page" id="notice">
+	<v-bar title="公告">
+		<a class="icon icon-left pull-left no-transition" slot="left" href="#page-main"></a>
+	</v-bar>
+<div class="content pull-to-refresh-content infinite-scroll notice" data-ptr-distance="50">
+  <div class="list-block media-list list-block-notice">
+  	<!--下拉刷新-->
+	<div class="pull-to-refresh-layer">
+	    <div class="preloader"></div>
+	    <div class="pull-to-refresh-arrow"></div>
+	</div>
+    <ul class="list-block">
+      <li v-on:click="href(item)" v-for="item in messageList">
+      	 <a href="#" class="item-link item-content">
+          <div class="item-inner">
+            <div class="item-title-row">
+              <div class="item-title">{{item.TITLE}}</div>
+            </div>
+            <div class="item-foot"><span class="news-type">{{item.SORT}}</span><span class="news-time">{{item.PUBLISH_TIME}}</span></div>
+          </div>
+        </a>
+      </li>
+    </ul>
+    </div>
+    	 <!--preloader-->
+	<div class="infinite-scroll-preloader"></div>
+</div>
+</div>		
+</body>
+</html>

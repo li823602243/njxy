@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>发布朋友圈</title>
+	</head>
+	<body>
+		<div class="page" id="publish-circle">
+			<v-bar title="发布班级圈">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+				<a class="icon pull-right" slot="left" id="publishCircleBtn" style="font-size:.7rem;">发布</a>
+			</v-bar>
+			<div class="content">
+				<div class="publish-circle-container bg-white">
+					<textarea id="pubCircleContent" placeholder="您想说点什么……" class="publish-circle-content"></textarea>
+					<ul id="publishPhotoList" class="publish-circle-photo-list clearfix">
+						<li id="addCirclePhotoBtn">
+							<div class="publish-avar">
+								<img  src="assets/img/circles/upload-picture.png" />	
+							</div>						
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

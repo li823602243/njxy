@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	作者：左武洲
+        	时间：2016-06-20
+        	描述：消息通知页面
+        -->
+		<div class="page" id="page-message">
+			<v-bar title="消息">
+			</v-bar>
+			<v-nav :is-active="true" v-if="role ==1 || role == 2"></v-nav>
+			<v-public v-else></v-public>
+			<div class="content pull-to-refresh-content infinite-scroll" data-ptr-distance="50">
+				<!--下拉刷新-->
+				<div class="pull-to-refresh-layer">
+				    <div class="preloader"></div>
+				    <div class="pull-to-refresh-arrow"></div>
+  				</div>
+				<ul class="list-block message-list">
+					<li v-for="item in infoList" v-on:click="chooseMe(item)" :host="host" :message="item" :time="getTimeTip(item.MES_DATE)" :delete="delete" track-by="MES_ID" is="v-messageItem"></li>
+				</ul>
+				<!--下拉加载-->
+				<div class="infinite-scroll-preloader">
+			    </div>
+			</div>
+		</div>
+	</body>
+</html>

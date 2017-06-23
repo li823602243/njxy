@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>课程表</title>
+	</head>
+	<body>
+		<div class="page" id="teachertable">
+			<v-bar title="课程表">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+			</v-bar>
+			<div class="content">
+				<div class="table-content"style="position: relative;margin-bottom: 1.5rem;">
+					<div class="table-bg1"></div>
+					<div class="table-bg2"></div>
+					
+					<table v-cloak style="text-align: center;">
+						<tr class="table-header">
+							<th></th>
+							<th>一</th>
+							<th>二</th>
+							<th>三</th>
+							<th>四</th>
+							<th>五</th>
+						</tr>
+						<tr>
+							<td class="table-middle" colspan ="6">早&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操</td>
+						</tr>
+						<tr  v-for="item in teachertablemlist">
+							<td>{{item.Head.time_NUM}}</td>
+							<td>{{item.Mon.item_VALUE}}{{item.Mon.class_ID}}</td>
+							<td>{{item.Tue.item_VALUE}}{{item.Tue.class_ID}}</td>
+							<td>{{item.Wen.item_VALUE}}{{item.Wen.class_ID}}</td>
+							<td>{{item.Tur.item_VALUE}}{{item.Tur.class_ID}}</td>
+							<td>{{item.Fri.item_VALUE}}{{item.Fri.class_ID}}</td>
+						</tr>
+						
+						<tr >						
+							<td class="table-middle" colspan ="6">午&nbsp;&nbsp;&nbsp;休&nbsp;&nbsp;写&nbsp;&nbsp;&nbsp;字</td>
+						</tr>
+						<tr v-for="item in teachertablealist">
+							<td>{{item.Head.time_NUM}}</td>
+							<td>{{item.Mon.item_VALUE}}{{item.Mon.class_ID}}</td>
+							<td>{{item.Tue.item_VALUE}}{{item.Tue.class_ID}}</td>
+							<td>{{item.Wen.item_VALUE}}{{item.Wen.class_ID}}</td>
+							<td>{{item.Tur.item_VALUE}}{{item.Tur.class_ID}}</td>
+							<td>{{item.Fri.item_VALUE}}{{item.Fri.class_ID}}</td>
+						</tr>
+					</table>
+					<div class="table-footer-content">
+						<div class="table-footerbg1"></div>
+						<div class="table-footerbg2"></div>
+						<div class="table-footer">
+							<span>{{teacher}}</span>
+						</div>
+					</div>	
+			    </div>
+		    </div>	
+	    </div>	
+	</body>
+</html>

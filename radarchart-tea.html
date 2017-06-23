@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="page" id="page-radarchartTea">
+        <!-- 标题栏 -->
+	        <v-bar title="成绩详情">
+	           <a class="icon icon-left pull-left back no-transition" slot="left"></a>
+	        </v-bar>
+		    <div  class="content" style="margin-bottom: 50px;">
+		    	<div>
+		    	    <img class="radarimg" v-if='headimg==undefined||headimg=="null"'  src="assets/img/systemheader.png" />
+		    		<img class="radarimg" v-else   :src="nginx+headimg" />
+		    	   	<div class="radarstudent" >
+			    		<p>{{classname}}</p>
+			    		<p class="radarname" >{{stuname}} &nbsp;&nbsp;学号:{{stucode}}</p>
+			    		
+		    		</div>
+		    	</div>
+			    <div class="radarcontent">
+			    	<div id="main"></div>
+			      <div class="row radarchartTea-total-list" v-show="show" style="background-color: darkgrey;margin: 0;">
+			      <div class="col-50">{{tesType}}</div>
+			      <div class="col-50">{{score}}</div>
+			      </div>
+			       <ul class="classscore">
+			       	  <li class="row cj">
+			       	  	<a class="col-25 active"><span>个人</span></a>
+			       	  	<a class="col-25"><span>班级</span></a>
+			       	  	<a class="col-25"><span>年级</span></a>
+			       	  	<a class="col-25"><span>对比</span></a>
+			       	  </li>
+			       </ul> 
+			    
+			   </div>
+			   <div class="radarchartTea-total">
+			   	<div class="row radarchartTea-total-list" v-for="item in items">
+			      <div class="col-40">{{item.LEAVE}}:</div>
+			      <div class="col-60"><div  class="dd{{$index%5}}" :style="{width:item.SCORING_AVG}"><span style="margin-left: 10px;">{{item.SCORING_AVG}}</span></div></div>
+			    </div>
+               </div>
+			   <div class="suggest">
+				<span class="icon icon-message"></span>
+				<span>留言列表</span>
+			<!--<img class="add-suggest" src="assets/img/yy-circleAdd.png">-->
+			</div>
+			<div class="suggestp">
+				<div class="">
+				<span class="suggestTip" v-if="!flag">暂无留言数据！</span>
+				<span class="suggest-font" v-for="content in suggest_content">{{content.USER_MESSAGE}}</span>
+				</div>
+			   
+			 </div>
+			 
+			 <div class="suggest-area clearfix" id="replyDiv">
+			<input type="text" name="" id="suggest_val" value="" placeholder="在这里可以回复家长留言！" />
+			<div class="button-box sure">
+			<a class="dialog-button sure" id="suggest_but_sure">发送</a>
+			</div>
+			 </div>
+		    </div>
+
+	   </div>
+	</body>
+</html>

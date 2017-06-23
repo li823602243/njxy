@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="page" id="page-resultsStudents">
+        <!-- 标题栏 -->
+	        <v-bar title="班级学生列表" v-if="goBack==undefined">
+	           <a class="icon icon-left pull-left  no-transition" slot="left" href="#class-list"></a>
+	           <a href="#" class="icon  pull-right   no-transition" :class="{'statistics':show===true}" slot="left" @click="statis" style="font-size: 14px;">统计</a>
+	        </v-bar>
+	        <v-bar title="班级学生列表" v-else>
+	           <a class="icon icon-left pull-left  no-transition" slot="left" href="#page-resultsList"></a>
+	           <a href="#" class="icon  pull-right   no-transition" :class="{'statistics':show===true}" slot="left" @click="statis" style="font-size: 14px;">统计</a>
+	        </v-bar>
+		    <div class="content">
+		    	<div class="students_list clearfix">
+		    		<div class="stuName" @click="stuItemClick(item)" v-bind:class="{ 'have': item.LEAVE_STATUS=='2' }" v-for="item in stuList">
+		    			<span>{{item.STUDENT_NAME}}</span>
+		    		</div>
+		    		
+		    	</div>
+		    	<!--  <div class="popover popover-links">
+				    <div class="popover-angle"></div>
+				    <div class="popover-inner">
+				      <div class="list-block">
+				        <ul>
+				          <li id="excellence"><a  class="list-button item-link">优秀及格率</a></li>
+				          <li id="performance"><a class="list-button item-link">成绩评级数</a></li>
+				        </ul>
+				      </div>
+				    </div>
+				  </div>-->
+		    </div> 
+	   </div>
+	</body>
+</html>

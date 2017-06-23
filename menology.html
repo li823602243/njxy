@@ -1,0 +1,59 @@
+<!--
+页面：工作日历页面
+说明：展示当天的工作和个人安排
+创建/修改：王为娟
+时间：2016/6/6
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="utf-8">
+
+	<head>
+		<title>工作日历</title>
+		<style type="text/css">
+	   
+		</style>
+	</head>
+
+	<body>
+
+		<div class="page" id="page-calendar">
+			<v-bar title="工作日历" :istab="true":tab1title="selecttime">
+				<a class=" icon icon-left pull-left no-transition" href="#page-main" slot="left"></a>
+				<a id="addmeno" class="icon pull-right no-transition" slot="right" ><img class="calen-image" src="assets/img/yy-circleAdd.png" style="width: 1rem; height: 1rem;" /></a>
+	            
+			</v-bar>
+			<div class="content" v-cloak>
+				<!-- 这里是页面内容区 -->
+				<!--<div id="index-calendar"></div>-->
+				<!--<div id="nowtime">{{}}</div>-->
+				<div id="calentime" style="height: 400px;width: 100%;margin-top: 35px;"></div>
+					<div class="calentime-wrapper">
+						<div class="list-block calen-list-block calentime-left-bra" style="margin-bottom: 1rem;">
+							<div class="card row meno-card" v-show="show">
+								<div class="col-20 meno-row-left">
+									<!--<div>星期一</div>-->
+									{{workDate}}
+								</div>
+								<div class="col-80 meno-row-right">
+							    <div class="meno-row" v-for="cont in contents.personal | orderBy 'men_TIME' '-1'">
+							    	<div class="meno-clu-date">{{cont.men_TIME}}</div>
+							    	<div class="meno-clu-content">
+							    		<div class="men-title">{{cont.title}}
+							    			<!--<img class="meno-icon" v-show="cont.calendar_TYPE==1" src="assets/img/menology/Admin.png" style="width: 23px;height: 10px;">
+							    			<img class="meno-icon" v-show="cont.calendar_TYPE==2" src="assets/img/menology/teache.png" style="width: 23px;height: 10px;">
+							    			<img class="meno-icon" v-show="cont.calendar_TYPE==3" src="assets/img/menology/logist.png" style="width: 23px;height: 10px;">
+							    			<img class="meno-icon" v-show="cont.calendar_TYPE==4" src="assets/img/menology/recept.png" style="width: 23px;height: 10px;">-->
+							    		</div>
+							    		<div class="men-content">{{cont.content}}</div>
+							    	</div>
+							    </div> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="page" id="page-radarchart">
+        <!-- 标题栏 -->
+	        <v-bar title="成绩详情">
+	           <a class="icon icon-left pull-left back no-transition" slot="left"></a>
+	        </v-bar>
+		    <div  class="content" >
+		    	<div>
+		    		<img class="radarimg"  src="assets/img/systemheader.png" />
+		    	   	<div class="radarstudent" >
+			    		<p>{{stuname}}</p>
+			    		<p class="radarname" >{{classname}} &nbsp;&nbsp;学号:{{stucode}}</p>
+			    		
+		    		</div>
+		    	</div>
+			    <div class="radarcontent">	
+			    	<div id="main" ></div>
+			       <ul class="classscore" >
+			       	  <li class="row cj">
+			       	  	<a class="col-25 active"><span>个人</span></a>
+			       	  	<a class="col-25"><span>班级</span></a>
+			       	  	<a class="col-25"><span>年级</span></a>
+			       	  	<a class="col-25"><span>对比</span></a>
+			       	  </li>
+			       </ul> 
+			    
+			   </div>
+			    <div class="suggest">
+			    	<span class="icon icon-message"></span>
+			    	<span>留言列表</span>
+			    	<!--<img class="add-suggest" src="assets/img/yy-circleAdd.png">-->
+			    </div>
+			    <div class="suggestp">
+			    	<div class="">
+			    		<span class="suggestTip" v-if="!flag">暂无留言数据！</span>
+			    		<span class="suggest-font" v-for="content in suggest_content">{{content.USER_MESSAGE}}
+			    			<!--<div><a href="#" @click="DelSuggest(content)">删除</a></div>-->
+			    		</span>
+			    	</div>
+			       
+			     </div>
+			     
+				 <div class="suggest-area clearfix">
+				 	<input type="text" name="" id="suggest_val" value="" placeholder="可以点这里留言哦~" />
+					<div class="button-box sure">
+						<a class="dialog-button sure" id="suggest_but_sure">留言</a>
+					</div>
+		   		 </div>
+		    </div>
+
+	   </div>
+	</body>
+</html>

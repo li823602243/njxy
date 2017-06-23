@@ -1,0 +1,64 @@
+<!--
+	作者：wangshujing@jsruiyin.com
+	时间：2016-06-27
+	描述：设置
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的-设置</title>
+	</head>
+
+	<body>
+		<div class="page bg-white" id="mine-setting">
+			<v-bar title="设置">
+				<a class="icon icon-left pull-left back no-transition" slot="left"></a>
+			</v-bar>
+			<div class="content">
+
+				<div class="list-block" style="margin-top: 0;">
+					<ul class="mine-setting-list">
+						<li class="item-content" v-if="role==2">
+							<div class="item-inner">
+								<div class="item-title">账号</div>
+								<div class="item-after" style="color: #3cc36f;">{{name}}</div>
+							</div>
+						</li>
+						<li class="item-content" v-else>
+							<div class="item-inner">
+								<div class="item-title">手机号码</div>
+								<div class="item-after" style="color: #3cc36f;" id="minePhoneDiv"></div>
+							</div>
+						</li>
+						<li class="item-content" id="loginPasswordBtn">
+							<div class="item-inner">
+								<div class="item-title">登录密码</div>					
+							</div>
+						</li>
+						<li class="item-content" id="mineGestureBtn">
+							<div class="item-inner">
+								<div class="item-title">手势密码</div>
+								<div class="item-after">创建</div>
+							</div>
+						</li>
+						<li class="item-content" id="clearCacheBtn">
+							<div class="item-inner">
+								<div class="item-title">清除缓存</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="setting-btn-logout">
+					<div class="setting-state-green">关于使用条款和隐私政策</div>
+					<div class="setting-state-gray">南京市小营小学 版权所有</div>
+					<button id="btn-logout" class="btn-logout">退出当前账号</button>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

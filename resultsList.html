@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="page" id="page-resultsList">
+        <!-- 标题栏 -->
+	        <v-bar title="成绩详情">
+	           <a class="icon icon-left pull-left  no-transition" slot="left" href="#test-type"></a>
+	        </v-bar>
+		    <div class="content">
+		    	<div class="resultsList">
+		    		<div class="resultsList_name">
+		    			<span>各班级最新测试列表</span>
+		    		</div>
+		    		<div class="resultsList_classes"> 
+		    			<ul>
+		    				<li @click="resultsListClick(item)" v-for="item in resultslist">
+		    					<div class="className">{{item.CLASS_NAME}}</div>
+		    					<div class="testName">{{item.TEST_NAME}}</div>
+		    				</li>
+		    				
+		    			</ul>
+		    		</div>
+		    	</div>
+		    </div>
+	   </div>
+	</body>
+</html>
